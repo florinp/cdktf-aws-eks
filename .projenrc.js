@@ -1,16 +1,38 @@
-const { ConstructLibraryCdktf } = require('projen');
+const { ConstructLibraryCdktf, DependenciesUpgradeMechanism } = require('projen');
+
+const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
+
 const project = new ConstructLibraryCdktf({
   author: 'Pahud Hsieh',
   authorAddress: 'pahudnet@gmail.com',
-  cdktfVersion: '0.4.0',
+  cdktfVersion: '0.5.0',
   defaultReleaseBranch: 'main',
-  name: 'cdktf-samples',
+  name: '@pahud/cdktf-aws-eks',
+  description: 'CDKTF construct library for Amazon EKS',
   repositoryUrl: 'https://github.com/pahud/cdktf-samples',
-
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
-  // release: undefined,      /* Add release management to this project. */
+  deps: [
+    '@cdktf/provider-aws',
+    '@cdktf/provider-kubernetes',
+  ],
+  peerDeps: [
+    '@cdktf/provider-aws',
+    '@cdktf/provider-kubernetes',
+  ],
+  depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
+    ignoreProjen: false,
+    workflowOptions: {
+      labels: ['auto-approve', 'auto-merge'],
+      secret: AUTOMATION_TOKEN,
+    },
+  }),
+  autoApproveOptions: {
+    secret: 'GITHUB_TOKEN',
+    allowedUsernames: ['pahud'],
+  },
 });
+
+const common_exclude = ['cdktf.out', 'yarn-error.log', 'dependabot.yml', '.terraform', 'terraform.*'];
+project.npmignore.exclude(...common_exclude, 'images', 'docs', 'website');
+project.gitignore.exclude(...common_exclude);
+
 project.synth();
