@@ -3,7 +3,7 @@
   "description": "CDKTF construct library for Amazon EKS",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pahud/cdktf-samples"
+    "url": "https://github.com/pahud/cdktf-aws-eks"
   },
   "scripts": {
     "clobber": "npx projen clobber",

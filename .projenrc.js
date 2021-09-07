@@ -9,7 +9,7 @@ const project = new ConstructLibraryCdktf({
   defaultReleaseBranch: 'main',
   name: '@pahud/cdktf-aws-eks',
   description: 'CDKTF construct library for Amazon EKS',
-  repositoryUrl: 'https://github.com/pahud/cdktf-samples',
+  repositoryUrl: 'https://github.com/pahud/cdktf-aws-eks',
   deps: [
     '@cdktf/provider-aws',
     '@cdktf/provider-kubernetes',
