@@ -18,6 +18,7 @@ const project = new ConstructLibraryCdktf({
     '@cdktf/provider-aws',
     '@cdktf/provider-kubernetes',
   ],
+  minNodeVersion: '12.20.0',
   depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
     ignoreProjen: false,
     workflowOptions: {
