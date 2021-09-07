@@ -1,4 +1,4 @@
-const { ConstructLibraryCdktf, DependenciesUpgradeMechanism } = require('projen');
+const { ConstructLibraryCdktf, DependenciesUpgradeMechanism, NpmAccess } = require('projen');
 
 const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
@@ -30,6 +30,7 @@ const project = new ConstructLibraryCdktf({
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['pahud'],
   },
+  npmAccess: NpmAccess.PUBLIC,
 });
 
 const common_exclude = ['cdktf.out', 'yarn-error.log', 'dependabot.yml', '.terraform', 'terraform.*'];

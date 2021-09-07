@@ -1,6 +1,6 @@
-# @pahud/cdktf-aws-eks
+# cdktf-aws-eks
 
-Create Amazon EKS clusters with CDK for Terraform.
+CDKTF construct library for Amazon EKS.
 
 ## Usage
 
