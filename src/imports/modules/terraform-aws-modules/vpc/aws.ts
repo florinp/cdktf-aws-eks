@@ -14,7 +14,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly assignIpv6AddressOnCreation?: boolean;
   /**
    * A list of availability zones names or ids in the region
-   * @default 
+   * @default
    */
   readonly azs?: string[];
   /**
@@ -129,7 +129,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly databaseSubnetGroupTags?: { [key: string]: string };
   /**
    * Assigns IPv6 database subnet id based on the Amazon provided /56 prefix base 10 integer (0-256). Must be of equal length to the corresponding IPv4 subnet list
-   * @default 
+   * @default
    */
   readonly databaseSubnetIpv6Prefixes?: string[];
   /**
@@ -144,7 +144,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly databaseSubnetTags?: { [key: string]: string };
   /**
    * A list of database subnets
-   * @default 
+   * @default
    */
   readonly databaseSubnets?: string[];
   /**
@@ -168,12 +168,12 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly defaultNetworkAclTags?: { [key: string]: string };
   /**
    * List of virtual gateways for propagation
-   * @default 
+   * @default
    */
   readonly defaultRouteTablePropagatingVgws?: string[];
   /**
    * Configuration block of routes. See https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_route_table#route
-   * @default 
+   * @default
    */
   readonly defaultRouteTableRoutes?: { [key: string]: string }[];
   /**
@@ -232,7 +232,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly dhcpOptionsDomainNameServers?: string[];
   /**
    * Specify a list of netbios servers for DHCP options set (requires enable_dhcp_options set to true)
-   * @default 
+   * @default
    */
   readonly dhcpOptionsNetbiosNameServers?: string[];
   /**
@@ -241,7 +241,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly dhcpOptionsNetbiosNodeType?: string;
   /**
    * Specify a list of NTP servers for DHCP options set (requires enable_dhcp_options set to true)
-   * @default 
+   * @default
    */
   readonly dhcpOptionsNtpServers?: string[];
   /**
@@ -288,7 +288,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly elasticacheSubnetGroupTags?: { [key: string]: string };
   /**
    * Assigns IPv6 elasticache subnet id based on the Amazon provided /56 prefix base 10 integer (0-256). Must be of equal length to the corresponding IPv4 subnet list
-   * @default 
+   * @default
    */
   readonly elasticacheSubnetIpv6Prefixes?: string[];
   /**
@@ -303,7 +303,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly elasticacheSubnetTags?: { [key: string]: string };
   /**
    * A list of elasticache subnets
-   * @default 
+   * @default
    */
   readonly elasticacheSubnets?: string[];
   /**
@@ -349,12 +349,12 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly enableVpnGateway?: boolean;
   /**
    * List of EIP IDs to be assigned to the NAT Gateways (used in combination with reuse_nat_ips)
-   * @default 
+   * @default
    */
   readonly externalNatIpIds?: string[];
   /**
    * List of EIPs to be used for `nat_public_ips` output (used in combination with reuse_nat_ips and external_nat_ip_ids)
-   * @default 
+   * @default
    */
   readonly externalNatIps?: string[];
   /**
@@ -437,7 +437,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly intraSubnetAssignIpv6AddressOnCreation?: boolean;
   /**
    * Assigns IPv6 intra subnet id based on the Amazon provided /56 prefix base 10 integer (0-256). Must be of equal length to the corresponding IPv4 subnet list
-   * @default 
+   * @default
    */
   readonly intraSubnetIpv6Prefixes?: string[];
   /**
@@ -452,7 +452,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly intraSubnetTags?: { [key: string]: string };
   /**
    * A list of intra subnets
-   * @default 
+   * @default
    */
   readonly intraSubnets?: string[];
   /**
@@ -527,7 +527,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly outpostSubnetAssignIpv6AddressOnCreation?: boolean;
   /**
    * Assigns IPv6 outpost subnet id based on the Amazon provided /56 prefix base 10 integer (0-256). Must be of equal length to the corresponding IPv4 subnet list
-   * @default 
+   * @default
    */
   readonly outpostSubnetIpv6Prefixes?: string[];
   /**
@@ -542,7 +542,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly outpostSubnetTags?: { [key: string]: string };
   /**
    * A list of outpost subnets inside the VPC
-   * @default 
+   * @default
    */
   readonly outpostSubnets?: string[];
   /**
@@ -575,7 +575,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly privateSubnetAssignIpv6AddressOnCreation?: boolean;
   /**
    * Assigns IPv6 private subnet id based on the Amazon provided /56 prefix base 10 integer (0-256). Must be of equal length to the corresponding IPv4 subnet list
-   * @default 
+   * @default
    */
   readonly privateSubnetIpv6Prefixes?: string[];
   /**
@@ -590,7 +590,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly privateSubnetTags?: { [key: string]: string };
   /**
    * A list of private subnets inside the VPC
-   * @default 
+   * @default
    */
   readonly privateSubnets?: string[];
   /**
@@ -635,7 +635,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly publicSubnetAssignIpv6AddressOnCreation?: boolean;
   /**
    * Assigns IPv6 public subnet id based on the Amazon provided /56 prefix base 10 integer (0-256). Must be of equal length to the corresponding IPv4 subnet list
-   * @default 
+   * @default
    */
   readonly publicSubnetIpv6Prefixes?: string[];
   /**
@@ -650,7 +650,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly publicSubnetTags?: { [key: string]: string };
   /**
    * A list of public subnets inside the VPC
-   * @default 
+   * @default
    */
   readonly publicSubnets?: string[];
   /**
@@ -692,7 +692,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly redshiftSubnetGroupTags?: { [key: string]: string };
   /**
    * Assigns IPv6 redshift subnet id based on the Amazon provided /56 prefix base 10 integer (0-256). Must be of equal length to the corresponding IPv4 subnet list
-   * @default 
+   * @default
    */
   readonly redshiftSubnetIpv6Prefixes?: string[];
   /**
@@ -707,7 +707,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly redshiftSubnetTags?: { [key: string]: string };
   /**
    * A list of redshift subnets
-   * @default 
+   * @default
    */
   readonly redshiftSubnets?: string[];
   /**
@@ -716,7 +716,7 @@ export interface TerraformAwsModulesVpcAwsOptions {
   readonly reuseNatIps?: boolean;
   /**
    * List of secondary CIDR blocks to associate with the VPC to extend the IP Address pool
-   * @default 
+   * @default
    */
   readonly secondaryCidrBlocks?: string[];
   /**
@@ -927,1309 +927,1309 @@ export class TerraformAwsModulesVpcAws extends TerraformModule {
     this.vpnGatewayTags = options.vpnGatewayTags;
   }
   public get amazonSideAsn(): string | undefined {
-    return this.inputs['amazon_side_asn'] as string | undefined;
+    return this.inputs.amazon_side_asn as string | undefined;
   }
   public set amazonSideAsn(value: string | undefined) {
-    this.inputs['amazon_side_asn'] = value;
+    this.inputs.amazon_side_asn = value;
   }
   public get assignIpv6AddressOnCreation(): boolean | undefined {
-    return this.inputs['assign_ipv6_address_on_creation'] as boolean | undefined;
+    return this.inputs.assign_ipv6_address_on_creation as boolean | undefined;
   }
   public set assignIpv6AddressOnCreation(value: boolean | undefined) {
-    this.inputs['assign_ipv6_address_on_creation'] = value;
+    this.inputs.assign_ipv6_address_on_creation = value;
   }
   public get azs(): string[] | undefined {
-    return this.inputs['azs'] as string[] | undefined;
+    return this.inputs.azs as string[] | undefined;
   }
   public set azs(value: string[] | undefined) {
-    this.inputs['azs'] = value;
+    this.inputs.azs = value;
   }
   public get cidr(): string | undefined {
-    return this.inputs['cidr'] as string | undefined;
+    return this.inputs.cidr as string | undefined;
   }
   public set cidr(value: string | undefined) {
-    this.inputs['cidr'] = value;
+    this.inputs.cidr = value;
   }
   public get createDatabaseInternetGatewayRoute(): boolean | undefined {
-    return this.inputs['create_database_internet_gateway_route'] as boolean | undefined;
+    return this.inputs.create_database_internet_gateway_route as boolean | undefined;
   }
   public set createDatabaseInternetGatewayRoute(value: boolean | undefined) {
-    this.inputs['create_database_internet_gateway_route'] = value;
+    this.inputs.create_database_internet_gateway_route = value;
   }
   public get createDatabaseNatGatewayRoute(): boolean | undefined {
-    return this.inputs['create_database_nat_gateway_route'] as boolean | undefined;
+    return this.inputs.create_database_nat_gateway_route as boolean | undefined;
   }
   public set createDatabaseNatGatewayRoute(value: boolean | undefined) {
-    this.inputs['create_database_nat_gateway_route'] = value;
+    this.inputs.create_database_nat_gateway_route = value;
   }
   public get createDatabaseSubnetGroup(): boolean | undefined {
-    return this.inputs['create_database_subnet_group'] as boolean | undefined;
+    return this.inputs.create_database_subnet_group as boolean | undefined;
   }
   public set createDatabaseSubnetGroup(value: boolean | undefined) {
-    this.inputs['create_database_subnet_group'] = value;
+    this.inputs.create_database_subnet_group = value;
   }
   public get createDatabaseSubnetRouteTable(): boolean | undefined {
-    return this.inputs['create_database_subnet_route_table'] as boolean | undefined;
+    return this.inputs.create_database_subnet_route_table as boolean | undefined;
   }
   public set createDatabaseSubnetRouteTable(value: boolean | undefined) {
-    this.inputs['create_database_subnet_route_table'] = value;
+    this.inputs.create_database_subnet_route_table = value;
   }
   public get createEgressOnlyIgw(): boolean | undefined {
-    return this.inputs['create_egress_only_igw'] as boolean | undefined;
+    return this.inputs.create_egress_only_igw as boolean | undefined;
   }
   public set createEgressOnlyIgw(value: boolean | undefined) {
-    this.inputs['create_egress_only_igw'] = value;
+    this.inputs.create_egress_only_igw = value;
   }
   public get createElasticacheSubnetGroup(): boolean | undefined {
-    return this.inputs['create_elasticache_subnet_group'] as boolean | undefined;
+    return this.inputs.create_elasticache_subnet_group as boolean | undefined;
   }
   public set createElasticacheSubnetGroup(value: boolean | undefined) {
-    this.inputs['create_elasticache_subnet_group'] = value;
+    this.inputs.create_elasticache_subnet_group = value;
   }
   public get createElasticacheSubnetRouteTable(): boolean | undefined {
-    return this.inputs['create_elasticache_subnet_route_table'] as boolean | undefined;
+    return this.inputs.create_elasticache_subnet_route_table as boolean | undefined;
   }
   public set createElasticacheSubnetRouteTable(value: boolean | undefined) {
-    this.inputs['create_elasticache_subnet_route_table'] = value;
+    this.inputs.create_elasticache_subnet_route_table = value;
   }
   public get createFlowLogCloudwatchIamRole(): boolean | undefined {
-    return this.inputs['create_flow_log_cloudwatch_iam_role'] as boolean | undefined;
+    return this.inputs.create_flow_log_cloudwatch_iam_role as boolean | undefined;
   }
   public set createFlowLogCloudwatchIamRole(value: boolean | undefined) {
-    this.inputs['create_flow_log_cloudwatch_iam_role'] = value;
+    this.inputs.create_flow_log_cloudwatch_iam_role = value;
   }
   public get createFlowLogCloudwatchLogGroup(): boolean | undefined {
-    return this.inputs['create_flow_log_cloudwatch_log_group'] as boolean | undefined;
+    return this.inputs.create_flow_log_cloudwatch_log_group as boolean | undefined;
   }
   public set createFlowLogCloudwatchLogGroup(value: boolean | undefined) {
-    this.inputs['create_flow_log_cloudwatch_log_group'] = value;
+    this.inputs.create_flow_log_cloudwatch_log_group = value;
   }
   public get createIgw(): boolean | undefined {
-    return this.inputs['create_igw'] as boolean | undefined;
+    return this.inputs.create_igw as boolean | undefined;
   }
   public set createIgw(value: boolean | undefined) {
-    this.inputs['create_igw'] = value;
+    this.inputs.create_igw = value;
   }
   public get createRedshiftSubnetGroup(): boolean | undefined {
-    return this.inputs['create_redshift_subnet_group'] as boolean | undefined;
+    return this.inputs.create_redshift_subnet_group as boolean | undefined;
   }
   public set createRedshiftSubnetGroup(value: boolean | undefined) {
-    this.inputs['create_redshift_subnet_group'] = value;
+    this.inputs.create_redshift_subnet_group = value;
   }
   public get createRedshiftSubnetRouteTable(): boolean | undefined {
-    return this.inputs['create_redshift_subnet_route_table'] as boolean | undefined;
+    return this.inputs.create_redshift_subnet_route_table as boolean | undefined;
   }
   public set createRedshiftSubnetRouteTable(value: boolean | undefined) {
-    this.inputs['create_redshift_subnet_route_table'] = value;
+    this.inputs.create_redshift_subnet_route_table = value;
   }
   public get createVpc(): boolean | undefined {
-    return this.inputs['create_vpc'] as boolean | undefined;
+    return this.inputs.create_vpc as boolean | undefined;
   }
   public set createVpc(value: boolean | undefined) {
-    this.inputs['create_vpc'] = value;
+    this.inputs.create_vpc = value;
   }
   public get customerGatewayTags(): { [key: string]: string } | undefined {
-    return this.inputs['customer_gateway_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.customer_gateway_tags as { [key: string]: string } | undefined;
   }
   public set customerGatewayTags(value: { [key: string]: string } | undefined) {
-    this.inputs['customer_gateway_tags'] = value;
+    this.inputs.customer_gateway_tags = value;
   }
   public get customerGateways(): { [key: string]: { [key: string]: any } } | undefined {
-    return this.inputs['customer_gateways'] as { [key: string]: { [key: string]: any } } | undefined;
+    return this.inputs.customer_gateways as { [key: string]: { [key: string]: any } } | undefined;
   }
   public set customerGateways(value: { [key: string]: { [key: string]: any } } | undefined) {
-    this.inputs['customer_gateways'] = value;
+    this.inputs.customer_gateways = value;
   }
   public get databaseAclTags(): { [key: string]: string } | undefined {
-    return this.inputs['database_acl_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.database_acl_tags as { [key: string]: string } | undefined;
   }
   public set databaseAclTags(value: { [key: string]: string } | undefined) {
-    this.inputs['database_acl_tags'] = value;
+    this.inputs.database_acl_tags = value;
   }
   public get databaseDedicatedNetworkAcl(): boolean | undefined {
-    return this.inputs['database_dedicated_network_acl'] as boolean | undefined;
+    return this.inputs.database_dedicated_network_acl as boolean | undefined;
   }
   public set databaseDedicatedNetworkAcl(value: boolean | undefined) {
-    this.inputs['database_dedicated_network_acl'] = value;
+    this.inputs.database_dedicated_network_acl = value;
   }
   public get databaseInboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['database_inbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.database_inbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set databaseInboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['database_inbound_acl_rules'] = value;
+    this.inputs.database_inbound_acl_rules = value;
   }
   public get databaseOutboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['database_outbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.database_outbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set databaseOutboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['database_outbound_acl_rules'] = value;
+    this.inputs.database_outbound_acl_rules = value;
   }
   public get databaseRouteTableTags(): { [key: string]: string } | undefined {
-    return this.inputs['database_route_table_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.database_route_table_tags as { [key: string]: string } | undefined;
   }
   public set databaseRouteTableTags(value: { [key: string]: string } | undefined) {
-    this.inputs['database_route_table_tags'] = value;
+    this.inputs.database_route_table_tags = value;
   }
   public get databaseSubnetAssignIpv6AddressOnCreation(): boolean | undefined {
-    return this.inputs['database_subnet_assign_ipv6_address_on_creation'] as boolean | undefined;
+    return this.inputs.database_subnet_assign_ipv6_address_on_creation as boolean | undefined;
   }
   public set databaseSubnetAssignIpv6AddressOnCreation(value: boolean | undefined) {
-    this.inputs['database_subnet_assign_ipv6_address_on_creation'] = value;
+    this.inputs.database_subnet_assign_ipv6_address_on_creation = value;
   }
   public get databaseSubnetGroupName(): string | undefined {
-    return this.inputs['database_subnet_group_name'] as string | undefined;
+    return this.inputs.database_subnet_group_name as string | undefined;
   }
   public set databaseSubnetGroupName(value: string | undefined) {
-    this.inputs['database_subnet_group_name'] = value;
+    this.inputs.database_subnet_group_name = value;
   }
   public get databaseSubnetGroupTags(): { [key: string]: string } | undefined {
-    return this.inputs['database_subnet_group_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.database_subnet_group_tags as { [key: string]: string } | undefined;
   }
   public set databaseSubnetGroupTags(value: { [key: string]: string } | undefined) {
-    this.inputs['database_subnet_group_tags'] = value;
+    this.inputs.database_subnet_group_tags = value;
   }
   public get databaseSubnetIpv6Prefixes(): string[] | undefined {
-    return this.inputs['database_subnet_ipv6_prefixes'] as string[] | undefined;
+    return this.inputs.database_subnet_ipv6_prefixes as string[] | undefined;
   }
   public set databaseSubnetIpv6Prefixes(value: string[] | undefined) {
-    this.inputs['database_subnet_ipv6_prefixes'] = value;
+    this.inputs.database_subnet_ipv6_prefixes = value;
   }
   public get databaseSubnetSuffix(): string | undefined {
-    return this.inputs['database_subnet_suffix'] as string | undefined;
+    return this.inputs.database_subnet_suffix as string | undefined;
   }
   public set databaseSubnetSuffix(value: string | undefined) {
-    this.inputs['database_subnet_suffix'] = value;
+    this.inputs.database_subnet_suffix = value;
   }
   public get databaseSubnetTags(): { [key: string]: string } | undefined {
-    return this.inputs['database_subnet_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.database_subnet_tags as { [key: string]: string } | undefined;
   }
   public set databaseSubnetTags(value: { [key: string]: string } | undefined) {
-    this.inputs['database_subnet_tags'] = value;
+    this.inputs.database_subnet_tags = value;
   }
   public get databaseSubnets(): string[] | undefined {
-    return this.inputs['database_subnets'] as string[] | undefined;
+    return this.inputs.database_subnets as string[] | undefined;
   }
   public set databaseSubnets(value: string[] | undefined) {
-    this.inputs['database_subnets'] = value;
+    this.inputs.database_subnets = value;
   }
   public get defaultNetworkAclEgress(): { [key: string]: string }[] | undefined {
-    return this.inputs['default_network_acl_egress'] as { [key: string]: string }[] | undefined;
+    return this.inputs.default_network_acl_egress as { [key: string]: string }[] | undefined;
   }
   public set defaultNetworkAclEgress(value: { [key: string]: string }[] | undefined) {
-    this.inputs['default_network_acl_egress'] = value;
+    this.inputs.default_network_acl_egress = value;
   }
   public get defaultNetworkAclIngress(): { [key: string]: string }[] | undefined {
-    return this.inputs['default_network_acl_ingress'] as { [key: string]: string }[] | undefined;
+    return this.inputs.default_network_acl_ingress as { [key: string]: string }[] | undefined;
   }
   public set defaultNetworkAclIngress(value: { [key: string]: string }[] | undefined) {
-    this.inputs['default_network_acl_ingress'] = value;
+    this.inputs.default_network_acl_ingress = value;
   }
   public get defaultNetworkAclName(): string | undefined {
-    return this.inputs['default_network_acl_name'] as string | undefined;
+    return this.inputs.default_network_acl_name as string | undefined;
   }
   public set defaultNetworkAclName(value: string | undefined) {
-    this.inputs['default_network_acl_name'] = value;
+    this.inputs.default_network_acl_name = value;
   }
   public get defaultNetworkAclTags(): { [key: string]: string } | undefined {
-    return this.inputs['default_network_acl_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.default_network_acl_tags as { [key: string]: string } | undefined;
   }
   public set defaultNetworkAclTags(value: { [key: string]: string } | undefined) {
-    this.inputs['default_network_acl_tags'] = value;
+    this.inputs.default_network_acl_tags = value;
   }
   public get defaultRouteTablePropagatingVgws(): string[] | undefined {
-    return this.inputs['default_route_table_propagating_vgws'] as string[] | undefined;
+    return this.inputs.default_route_table_propagating_vgws as string[] | undefined;
   }
   public set defaultRouteTablePropagatingVgws(value: string[] | undefined) {
-    this.inputs['default_route_table_propagating_vgws'] = value;
+    this.inputs.default_route_table_propagating_vgws = value;
   }
   public get defaultRouteTableRoutes(): { [key: string]: string }[] | undefined {
-    return this.inputs['default_route_table_routes'] as { [key: string]: string }[] | undefined;
+    return this.inputs.default_route_table_routes as { [key: string]: string }[] | undefined;
   }
   public set defaultRouteTableRoutes(value: { [key: string]: string }[] | undefined) {
-    this.inputs['default_route_table_routes'] = value;
+    this.inputs.default_route_table_routes = value;
   }
   public get defaultRouteTableTags(): { [key: string]: string } | undefined {
-    return this.inputs['default_route_table_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.default_route_table_tags as { [key: string]: string } | undefined;
   }
   public set defaultRouteTableTags(value: { [key: string]: string } | undefined) {
-    this.inputs['default_route_table_tags'] = value;
+    this.inputs.default_route_table_tags = value;
   }
   public get defaultSecurityGroupEgress(): { [key: string]: string }[] | undefined {
-    return this.inputs['default_security_group_egress'] as { [key: string]: string }[] | undefined;
+    return this.inputs.default_security_group_egress as { [key: string]: string }[] | undefined;
   }
   public set defaultSecurityGroupEgress(value: { [key: string]: string }[] | undefined) {
-    this.inputs['default_security_group_egress'] = value;
+    this.inputs.default_security_group_egress = value;
   }
   public get defaultSecurityGroupIngress(): { [key: string]: string }[] | undefined {
-    return this.inputs['default_security_group_ingress'] as { [key: string]: string }[] | undefined;
+    return this.inputs.default_security_group_ingress as { [key: string]: string }[] | undefined;
   }
   public set defaultSecurityGroupIngress(value: { [key: string]: string }[] | undefined) {
-    this.inputs['default_security_group_ingress'] = value;
+    this.inputs.default_security_group_ingress = value;
   }
   public get defaultSecurityGroupName(): string | undefined {
-    return this.inputs['default_security_group_name'] as string | undefined;
+    return this.inputs.default_security_group_name as string | undefined;
   }
   public set defaultSecurityGroupName(value: string | undefined) {
-    this.inputs['default_security_group_name'] = value;
+    this.inputs.default_security_group_name = value;
   }
   public get defaultSecurityGroupTags(): { [key: string]: string } | undefined {
-    return this.inputs['default_security_group_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.default_security_group_tags as { [key: string]: string } | undefined;
   }
   public set defaultSecurityGroupTags(value: { [key: string]: string } | undefined) {
-    this.inputs['default_security_group_tags'] = value;
+    this.inputs.default_security_group_tags = value;
   }
   public get defaultVpcEnableClassiclink(): boolean | undefined {
-    return this.inputs['default_vpc_enable_classiclink'] as boolean | undefined;
+    return this.inputs.default_vpc_enable_classiclink as boolean | undefined;
   }
   public set defaultVpcEnableClassiclink(value: boolean | undefined) {
-    this.inputs['default_vpc_enable_classiclink'] = value;
+    this.inputs.default_vpc_enable_classiclink = value;
   }
   public get defaultVpcEnableDnsHostnames(): boolean | undefined {
-    return this.inputs['default_vpc_enable_dns_hostnames'] as boolean | undefined;
+    return this.inputs.default_vpc_enable_dns_hostnames as boolean | undefined;
   }
   public set defaultVpcEnableDnsHostnames(value: boolean | undefined) {
-    this.inputs['default_vpc_enable_dns_hostnames'] = value;
+    this.inputs.default_vpc_enable_dns_hostnames = value;
   }
   public get defaultVpcEnableDnsSupport(): boolean | undefined {
-    return this.inputs['default_vpc_enable_dns_support'] as boolean | undefined;
+    return this.inputs.default_vpc_enable_dns_support as boolean | undefined;
   }
   public set defaultVpcEnableDnsSupport(value: boolean | undefined) {
-    this.inputs['default_vpc_enable_dns_support'] = value;
+    this.inputs.default_vpc_enable_dns_support = value;
   }
   public get defaultVpcName(): string | undefined {
-    return this.inputs['default_vpc_name'] as string | undefined;
+    return this.inputs.default_vpc_name as string | undefined;
   }
   public set defaultVpcName(value: string | undefined) {
-    this.inputs['default_vpc_name'] = value;
+    this.inputs.default_vpc_name = value;
   }
   public get defaultVpcTags(): { [key: string]: string } | undefined {
-    return this.inputs['default_vpc_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.default_vpc_tags as { [key: string]: string } | undefined;
   }
   public set defaultVpcTags(value: { [key: string]: string } | undefined) {
-    this.inputs['default_vpc_tags'] = value;
+    this.inputs.default_vpc_tags = value;
   }
   public get dhcpOptionsDomainName(): string | undefined {
-    return this.inputs['dhcp_options_domain_name'] as string | undefined;
+    return this.inputs.dhcp_options_domain_name as string | undefined;
   }
   public set dhcpOptionsDomainName(value: string | undefined) {
-    this.inputs['dhcp_options_domain_name'] = value;
+    this.inputs.dhcp_options_domain_name = value;
   }
   public get dhcpOptionsDomainNameServers(): string[] | undefined {
-    return this.inputs['dhcp_options_domain_name_servers'] as string[] | undefined;
+    return this.inputs.dhcp_options_domain_name_servers as string[] | undefined;
   }
   public set dhcpOptionsDomainNameServers(value: string[] | undefined) {
-    this.inputs['dhcp_options_domain_name_servers'] = value;
+    this.inputs.dhcp_options_domain_name_servers = value;
   }
   public get dhcpOptionsNetbiosNameServers(): string[] | undefined {
-    return this.inputs['dhcp_options_netbios_name_servers'] as string[] | undefined;
+    return this.inputs.dhcp_options_netbios_name_servers as string[] | undefined;
   }
   public set dhcpOptionsNetbiosNameServers(value: string[] | undefined) {
-    this.inputs['dhcp_options_netbios_name_servers'] = value;
+    this.inputs.dhcp_options_netbios_name_servers = value;
   }
   public get dhcpOptionsNetbiosNodeType(): string | undefined {
-    return this.inputs['dhcp_options_netbios_node_type'] as string | undefined;
+    return this.inputs.dhcp_options_netbios_node_type as string | undefined;
   }
   public set dhcpOptionsNetbiosNodeType(value: string | undefined) {
-    this.inputs['dhcp_options_netbios_node_type'] = value;
+    this.inputs.dhcp_options_netbios_node_type = value;
   }
   public get dhcpOptionsNtpServers(): string[] | undefined {
-    return this.inputs['dhcp_options_ntp_servers'] as string[] | undefined;
+    return this.inputs.dhcp_options_ntp_servers as string[] | undefined;
   }
   public set dhcpOptionsNtpServers(value: string[] | undefined) {
-    this.inputs['dhcp_options_ntp_servers'] = value;
+    this.inputs.dhcp_options_ntp_servers = value;
   }
   public get dhcpOptionsTags(): { [key: string]: string } | undefined {
-    return this.inputs['dhcp_options_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.dhcp_options_tags as { [key: string]: string } | undefined;
   }
   public set dhcpOptionsTags(value: { [key: string]: string } | undefined) {
-    this.inputs['dhcp_options_tags'] = value;
+    this.inputs.dhcp_options_tags = value;
   }
   public get elasticacheAclTags(): { [key: string]: string } | undefined {
-    return this.inputs['elasticache_acl_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.elasticache_acl_tags as { [key: string]: string } | undefined;
   }
   public set elasticacheAclTags(value: { [key: string]: string } | undefined) {
-    this.inputs['elasticache_acl_tags'] = value;
+    this.inputs.elasticache_acl_tags = value;
   }
   public get elasticacheDedicatedNetworkAcl(): boolean | undefined {
-    return this.inputs['elasticache_dedicated_network_acl'] as boolean | undefined;
+    return this.inputs.elasticache_dedicated_network_acl as boolean | undefined;
   }
   public set elasticacheDedicatedNetworkAcl(value: boolean | undefined) {
-    this.inputs['elasticache_dedicated_network_acl'] = value;
+    this.inputs.elasticache_dedicated_network_acl = value;
   }
   public get elasticacheInboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['elasticache_inbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.elasticache_inbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set elasticacheInboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['elasticache_inbound_acl_rules'] = value;
+    this.inputs.elasticache_inbound_acl_rules = value;
   }
   public get elasticacheOutboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['elasticache_outbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.elasticache_outbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set elasticacheOutboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['elasticache_outbound_acl_rules'] = value;
+    this.inputs.elasticache_outbound_acl_rules = value;
   }
   public get elasticacheRouteTableTags(): { [key: string]: string } | undefined {
-    return this.inputs['elasticache_route_table_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.elasticache_route_table_tags as { [key: string]: string } | undefined;
   }
   public set elasticacheRouteTableTags(value: { [key: string]: string } | undefined) {
-    this.inputs['elasticache_route_table_tags'] = value;
+    this.inputs.elasticache_route_table_tags = value;
   }
   public get elasticacheSubnetAssignIpv6AddressOnCreation(): boolean | undefined {
-    return this.inputs['elasticache_subnet_assign_ipv6_address_on_creation'] as boolean | undefined;
+    return this.inputs.elasticache_subnet_assign_ipv6_address_on_creation as boolean | undefined;
   }
   public set elasticacheSubnetAssignIpv6AddressOnCreation(value: boolean | undefined) {
-    this.inputs['elasticache_subnet_assign_ipv6_address_on_creation'] = value;
+    this.inputs.elasticache_subnet_assign_ipv6_address_on_creation = value;
   }
   public get elasticacheSubnetGroupName(): string | undefined {
-    return this.inputs['elasticache_subnet_group_name'] as string | undefined;
+    return this.inputs.elasticache_subnet_group_name as string | undefined;
   }
   public set elasticacheSubnetGroupName(value: string | undefined) {
-    this.inputs['elasticache_subnet_group_name'] = value;
+    this.inputs.elasticache_subnet_group_name = value;
   }
   public get elasticacheSubnetGroupTags(): { [key: string]: string } | undefined {
-    return this.inputs['elasticache_subnet_group_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.elasticache_subnet_group_tags as { [key: string]: string } | undefined;
   }
   public set elasticacheSubnetGroupTags(value: { [key: string]: string } | undefined) {
-    this.inputs['elasticache_subnet_group_tags'] = value;
+    this.inputs.elasticache_subnet_group_tags = value;
   }
   public get elasticacheSubnetIpv6Prefixes(): string[] | undefined {
-    return this.inputs['elasticache_subnet_ipv6_prefixes'] as string[] | undefined;
+    return this.inputs.elasticache_subnet_ipv6_prefixes as string[] | undefined;
   }
   public set elasticacheSubnetIpv6Prefixes(value: string[] | undefined) {
-    this.inputs['elasticache_subnet_ipv6_prefixes'] = value;
+    this.inputs.elasticache_subnet_ipv6_prefixes = value;
   }
   public get elasticacheSubnetSuffix(): string | undefined {
-    return this.inputs['elasticache_subnet_suffix'] as string | undefined;
+    return this.inputs.elasticache_subnet_suffix as string | undefined;
   }
   public set elasticacheSubnetSuffix(value: string | undefined) {
-    this.inputs['elasticache_subnet_suffix'] = value;
+    this.inputs.elasticache_subnet_suffix = value;
   }
   public get elasticacheSubnetTags(): { [key: string]: string } | undefined {
-    return this.inputs['elasticache_subnet_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.elasticache_subnet_tags as { [key: string]: string } | undefined;
   }
   public set elasticacheSubnetTags(value: { [key: string]: string } | undefined) {
-    this.inputs['elasticache_subnet_tags'] = value;
+    this.inputs.elasticache_subnet_tags = value;
   }
   public get elasticacheSubnets(): string[] | undefined {
-    return this.inputs['elasticache_subnets'] as string[] | undefined;
+    return this.inputs.elasticache_subnets as string[] | undefined;
   }
   public set elasticacheSubnets(value: string[] | undefined) {
-    this.inputs['elasticache_subnets'] = value;
+    this.inputs.elasticache_subnets = value;
   }
   public get enableClassiclink(): boolean | undefined {
-    return this.inputs['enable_classiclink'] as boolean | undefined;
+    return this.inputs.enable_classiclink as boolean | undefined;
   }
   public set enableClassiclink(value: boolean | undefined) {
-    this.inputs['enable_classiclink'] = value;
+    this.inputs.enable_classiclink = value;
   }
   public get enableClassiclinkDnsSupport(): boolean | undefined {
-    return this.inputs['enable_classiclink_dns_support'] as boolean | undefined;
+    return this.inputs.enable_classiclink_dns_support as boolean | undefined;
   }
   public set enableClassiclinkDnsSupport(value: boolean | undefined) {
-    this.inputs['enable_classiclink_dns_support'] = value;
+    this.inputs.enable_classiclink_dns_support = value;
   }
   public get enableDhcpOptions(): boolean | undefined {
-    return this.inputs['enable_dhcp_options'] as boolean | undefined;
+    return this.inputs.enable_dhcp_options as boolean | undefined;
   }
   public set enableDhcpOptions(value: boolean | undefined) {
-    this.inputs['enable_dhcp_options'] = value;
+    this.inputs.enable_dhcp_options = value;
   }
   public get enableDnsHostnames(): boolean | undefined {
-    return this.inputs['enable_dns_hostnames'] as boolean | undefined;
+    return this.inputs.enable_dns_hostnames as boolean | undefined;
   }
   public set enableDnsHostnames(value: boolean | undefined) {
-    this.inputs['enable_dns_hostnames'] = value;
+    this.inputs.enable_dns_hostnames = value;
   }
   public get enableDnsSupport(): boolean | undefined {
-    return this.inputs['enable_dns_support'] as boolean | undefined;
+    return this.inputs.enable_dns_support as boolean | undefined;
   }
   public set enableDnsSupport(value: boolean | undefined) {
-    this.inputs['enable_dns_support'] = value;
+    this.inputs.enable_dns_support = value;
   }
   public get enableFlowLog(): boolean | undefined {
-    return this.inputs['enable_flow_log'] as boolean | undefined;
+    return this.inputs.enable_flow_log as boolean | undefined;
   }
   public set enableFlowLog(value: boolean | undefined) {
-    this.inputs['enable_flow_log'] = value;
+    this.inputs.enable_flow_log = value;
   }
   public get enableIpv6(): boolean | undefined {
-    return this.inputs['enable_ipv6'] as boolean | undefined;
+    return this.inputs.enable_ipv6 as boolean | undefined;
   }
   public set enableIpv6(value: boolean | undefined) {
-    this.inputs['enable_ipv6'] = value;
+    this.inputs.enable_ipv6 = value;
   }
   public get enableNatGateway(): boolean | undefined {
-    return this.inputs['enable_nat_gateway'] as boolean | undefined;
+    return this.inputs.enable_nat_gateway as boolean | undefined;
   }
   public set enableNatGateway(value: boolean | undefined) {
-    this.inputs['enable_nat_gateway'] = value;
+    this.inputs.enable_nat_gateway = value;
   }
   public get enablePublicRedshift(): boolean | undefined {
-    return this.inputs['enable_public_redshift'] as boolean | undefined;
+    return this.inputs.enable_public_redshift as boolean | undefined;
   }
   public set enablePublicRedshift(value: boolean | undefined) {
-    this.inputs['enable_public_redshift'] = value;
+    this.inputs.enable_public_redshift = value;
   }
   public get enableVpnGateway(): boolean | undefined {
-    return this.inputs['enable_vpn_gateway'] as boolean | undefined;
+    return this.inputs.enable_vpn_gateway as boolean | undefined;
   }
   public set enableVpnGateway(value: boolean | undefined) {
-    this.inputs['enable_vpn_gateway'] = value;
+    this.inputs.enable_vpn_gateway = value;
   }
   public get externalNatIpIds(): string[] | undefined {
-    return this.inputs['external_nat_ip_ids'] as string[] | undefined;
+    return this.inputs.external_nat_ip_ids as string[] | undefined;
   }
   public set externalNatIpIds(value: string[] | undefined) {
-    this.inputs['external_nat_ip_ids'] = value;
+    this.inputs.external_nat_ip_ids = value;
   }
   public get externalNatIps(): string[] | undefined {
-    return this.inputs['external_nat_ips'] as string[] | undefined;
+    return this.inputs.external_nat_ips as string[] | undefined;
   }
   public set externalNatIps(value: string[] | undefined) {
-    this.inputs['external_nat_ips'] = value;
+    this.inputs.external_nat_ips = value;
   }
   public get flowLogCloudwatchIamRoleArn(): string | undefined {
-    return this.inputs['flow_log_cloudwatch_iam_role_arn'] as string | undefined;
+    return this.inputs.flow_log_cloudwatch_iam_role_arn as string | undefined;
   }
   public set flowLogCloudwatchIamRoleArn(value: string | undefined) {
-    this.inputs['flow_log_cloudwatch_iam_role_arn'] = value;
+    this.inputs.flow_log_cloudwatch_iam_role_arn = value;
   }
   public get flowLogCloudwatchLogGroupKmsKeyId(): string | undefined {
-    return this.inputs['flow_log_cloudwatch_log_group_kms_key_id'] as string | undefined;
+    return this.inputs.flow_log_cloudwatch_log_group_kms_key_id as string | undefined;
   }
   public set flowLogCloudwatchLogGroupKmsKeyId(value: string | undefined) {
-    this.inputs['flow_log_cloudwatch_log_group_kms_key_id'] = value;
+    this.inputs.flow_log_cloudwatch_log_group_kms_key_id = value;
   }
   public get flowLogCloudwatchLogGroupNamePrefix(): string | undefined {
-    return this.inputs['flow_log_cloudwatch_log_group_name_prefix'] as string | undefined;
+    return this.inputs.flow_log_cloudwatch_log_group_name_prefix as string | undefined;
   }
   public set flowLogCloudwatchLogGroupNamePrefix(value: string | undefined) {
-    this.inputs['flow_log_cloudwatch_log_group_name_prefix'] = value;
+    this.inputs.flow_log_cloudwatch_log_group_name_prefix = value;
   }
   public get flowLogCloudwatchLogGroupRetentionInDays(): number | undefined {
-    return this.inputs['flow_log_cloudwatch_log_group_retention_in_days'] as number | undefined;
+    return this.inputs.flow_log_cloudwatch_log_group_retention_in_days as number | undefined;
   }
   public set flowLogCloudwatchLogGroupRetentionInDays(value: number | undefined) {
-    this.inputs['flow_log_cloudwatch_log_group_retention_in_days'] = value;
+    this.inputs.flow_log_cloudwatch_log_group_retention_in_days = value;
   }
   public get flowLogDestinationArn(): string | undefined {
-    return this.inputs['flow_log_destination_arn'] as string | undefined;
+    return this.inputs.flow_log_destination_arn as string | undefined;
   }
   public set flowLogDestinationArn(value: string | undefined) {
-    this.inputs['flow_log_destination_arn'] = value;
+    this.inputs.flow_log_destination_arn = value;
   }
   public get flowLogDestinationType(): string | undefined {
-    return this.inputs['flow_log_destination_type'] as string | undefined;
+    return this.inputs.flow_log_destination_type as string | undefined;
   }
   public set flowLogDestinationType(value: string | undefined) {
-    this.inputs['flow_log_destination_type'] = value;
+    this.inputs.flow_log_destination_type = value;
   }
   public get flowLogLogFormat(): string | undefined {
-    return this.inputs['flow_log_log_format'] as string | undefined;
+    return this.inputs.flow_log_log_format as string | undefined;
   }
   public set flowLogLogFormat(value: string | undefined) {
-    this.inputs['flow_log_log_format'] = value;
+    this.inputs.flow_log_log_format = value;
   }
   public get flowLogMaxAggregationInterval(): number | undefined {
-    return this.inputs['flow_log_max_aggregation_interval'] as number | undefined;
+    return this.inputs.flow_log_max_aggregation_interval as number | undefined;
   }
   public set flowLogMaxAggregationInterval(value: number | undefined) {
-    this.inputs['flow_log_max_aggregation_interval'] = value;
+    this.inputs.flow_log_max_aggregation_interval = value;
   }
   public get flowLogTrafficType(): string | undefined {
-    return this.inputs['flow_log_traffic_type'] as string | undefined;
+    return this.inputs.flow_log_traffic_type as string | undefined;
   }
   public set flowLogTrafficType(value: string | undefined) {
-    this.inputs['flow_log_traffic_type'] = value;
+    this.inputs.flow_log_traffic_type = value;
   }
   public get igwTags(): { [key: string]: string } | undefined {
-    return this.inputs['igw_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.igw_tags as { [key: string]: string } | undefined;
   }
   public set igwTags(value: { [key: string]: string } | undefined) {
-    this.inputs['igw_tags'] = value;
+    this.inputs.igw_tags = value;
   }
   public get instanceTenancy(): string | undefined {
-    return this.inputs['instance_tenancy'] as string | undefined;
+    return this.inputs.instance_tenancy as string | undefined;
   }
   public set instanceTenancy(value: string | undefined) {
-    this.inputs['instance_tenancy'] = value;
+    this.inputs.instance_tenancy = value;
   }
   public get intraAclTags(): { [key: string]: string } | undefined {
-    return this.inputs['intra_acl_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.intra_acl_tags as { [key: string]: string } | undefined;
   }
   public set intraAclTags(value: { [key: string]: string } | undefined) {
-    this.inputs['intra_acl_tags'] = value;
+    this.inputs.intra_acl_tags = value;
   }
   public get intraDedicatedNetworkAcl(): boolean | undefined {
-    return this.inputs['intra_dedicated_network_acl'] as boolean | undefined;
+    return this.inputs.intra_dedicated_network_acl as boolean | undefined;
   }
   public set intraDedicatedNetworkAcl(value: boolean | undefined) {
-    this.inputs['intra_dedicated_network_acl'] = value;
+    this.inputs.intra_dedicated_network_acl = value;
   }
   public get intraInboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['intra_inbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.intra_inbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set intraInboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['intra_inbound_acl_rules'] = value;
+    this.inputs.intra_inbound_acl_rules = value;
   }
   public get intraOutboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['intra_outbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.intra_outbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set intraOutboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['intra_outbound_acl_rules'] = value;
+    this.inputs.intra_outbound_acl_rules = value;
   }
   public get intraRouteTableTags(): { [key: string]: string } | undefined {
-    return this.inputs['intra_route_table_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.intra_route_table_tags as { [key: string]: string } | undefined;
   }
   public set intraRouteTableTags(value: { [key: string]: string } | undefined) {
-    this.inputs['intra_route_table_tags'] = value;
+    this.inputs.intra_route_table_tags = value;
   }
   public get intraSubnetAssignIpv6AddressOnCreation(): boolean | undefined {
-    return this.inputs['intra_subnet_assign_ipv6_address_on_creation'] as boolean | undefined;
+    return this.inputs.intra_subnet_assign_ipv6_address_on_creation as boolean | undefined;
   }
   public set intraSubnetAssignIpv6AddressOnCreation(value: boolean | undefined) {
-    this.inputs['intra_subnet_assign_ipv6_address_on_creation'] = value;
+    this.inputs.intra_subnet_assign_ipv6_address_on_creation = value;
   }
   public get intraSubnetIpv6Prefixes(): string[] | undefined {
-    return this.inputs['intra_subnet_ipv6_prefixes'] as string[] | undefined;
+    return this.inputs.intra_subnet_ipv6_prefixes as string[] | undefined;
   }
   public set intraSubnetIpv6Prefixes(value: string[] | undefined) {
-    this.inputs['intra_subnet_ipv6_prefixes'] = value;
+    this.inputs.intra_subnet_ipv6_prefixes = value;
   }
   public get intraSubnetSuffix(): string | undefined {
-    return this.inputs['intra_subnet_suffix'] as string | undefined;
+    return this.inputs.intra_subnet_suffix as string | undefined;
   }
   public set intraSubnetSuffix(value: string | undefined) {
-    this.inputs['intra_subnet_suffix'] = value;
+    this.inputs.intra_subnet_suffix = value;
   }
   public get intraSubnetTags(): { [key: string]: string } | undefined {
-    return this.inputs['intra_subnet_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.intra_subnet_tags as { [key: string]: string } | undefined;
   }
   public set intraSubnetTags(value: { [key: string]: string } | undefined) {
-    this.inputs['intra_subnet_tags'] = value;
+    this.inputs.intra_subnet_tags = value;
   }
   public get intraSubnets(): string[] | undefined {
-    return this.inputs['intra_subnets'] as string[] | undefined;
+    return this.inputs.intra_subnets as string[] | undefined;
   }
   public set intraSubnets(value: string[] | undefined) {
-    this.inputs['intra_subnets'] = value;
+    this.inputs.intra_subnets = value;
   }
   public get manageDefaultNetworkAcl(): boolean | undefined {
-    return this.inputs['manage_default_network_acl'] as boolean | undefined;
+    return this.inputs.manage_default_network_acl as boolean | undefined;
   }
   public set manageDefaultNetworkAcl(value: boolean | undefined) {
-    this.inputs['manage_default_network_acl'] = value;
+    this.inputs.manage_default_network_acl = value;
   }
   public get manageDefaultRouteTable(): boolean | undefined {
-    return this.inputs['manage_default_route_table'] as boolean | undefined;
+    return this.inputs.manage_default_route_table as boolean | undefined;
   }
   public set manageDefaultRouteTable(value: boolean | undefined) {
-    this.inputs['manage_default_route_table'] = value;
+    this.inputs.manage_default_route_table = value;
   }
   public get manageDefaultSecurityGroup(): boolean | undefined {
-    return this.inputs['manage_default_security_group'] as boolean | undefined;
+    return this.inputs.manage_default_security_group as boolean | undefined;
   }
   public set manageDefaultSecurityGroup(value: boolean | undefined) {
-    this.inputs['manage_default_security_group'] = value;
+    this.inputs.manage_default_security_group = value;
   }
   public get manageDefaultVpc(): boolean | undefined {
-    return this.inputs['manage_default_vpc'] as boolean | undefined;
+    return this.inputs.manage_default_vpc as boolean | undefined;
   }
   public set manageDefaultVpc(value: boolean | undefined) {
-    this.inputs['manage_default_vpc'] = value;
+    this.inputs.manage_default_vpc = value;
   }
   public get mapPublicIpOnLaunch(): boolean | undefined {
-    return this.inputs['map_public_ip_on_launch'] as boolean | undefined;
+    return this.inputs.map_public_ip_on_launch as boolean | undefined;
   }
   public set mapPublicIpOnLaunch(value: boolean | undefined) {
-    this.inputs['map_public_ip_on_launch'] = value;
+    this.inputs.map_public_ip_on_launch = value;
   }
   public get name(): string | undefined {
-    return this.inputs['name'] as string | undefined;
+    return this.inputs.name as string | undefined;
   }
   public set name(value: string | undefined) {
-    this.inputs['name'] = value;
+    this.inputs.name = value;
   }
   public get natEipTags(): { [key: string]: string } | undefined {
-    return this.inputs['nat_eip_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.nat_eip_tags as { [key: string]: string } | undefined;
   }
   public set natEipTags(value: { [key: string]: string } | undefined) {
-    this.inputs['nat_eip_tags'] = value;
+    this.inputs.nat_eip_tags = value;
   }
   public get natGatewayTags(): { [key: string]: string } | undefined {
-    return this.inputs['nat_gateway_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.nat_gateway_tags as { [key: string]: string } | undefined;
   }
   public set natGatewayTags(value: { [key: string]: string } | undefined) {
-    this.inputs['nat_gateway_tags'] = value;
+    this.inputs.nat_gateway_tags = value;
   }
   public get oneNatGatewayPerAz(): boolean | undefined {
-    return this.inputs['one_nat_gateway_per_az'] as boolean | undefined;
+    return this.inputs.one_nat_gateway_per_az as boolean | undefined;
   }
   public set oneNatGatewayPerAz(value: boolean | undefined) {
-    this.inputs['one_nat_gateway_per_az'] = value;
+    this.inputs.one_nat_gateway_per_az = value;
   }
   public get outpostAclTags(): { [key: string]: string } | undefined {
-    return this.inputs['outpost_acl_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.outpost_acl_tags as { [key: string]: string } | undefined;
   }
   public set outpostAclTags(value: { [key: string]: string } | undefined) {
-    this.inputs['outpost_acl_tags'] = value;
+    this.inputs.outpost_acl_tags = value;
   }
   public get outpostArn(): string | undefined {
-    return this.inputs['outpost_arn'] as string | undefined;
+    return this.inputs.outpost_arn as string | undefined;
   }
   public set outpostArn(value: string | undefined) {
-    this.inputs['outpost_arn'] = value;
+    this.inputs.outpost_arn = value;
   }
   public get outpostAz(): string | undefined {
-    return this.inputs['outpost_az'] as string | undefined;
+    return this.inputs.outpost_az as string | undefined;
   }
   public set outpostAz(value: string | undefined) {
-    this.inputs['outpost_az'] = value;
+    this.inputs.outpost_az = value;
   }
   public get outpostDedicatedNetworkAcl(): boolean | undefined {
-    return this.inputs['outpost_dedicated_network_acl'] as boolean | undefined;
+    return this.inputs.outpost_dedicated_network_acl as boolean | undefined;
   }
   public set outpostDedicatedNetworkAcl(value: boolean | undefined) {
-    this.inputs['outpost_dedicated_network_acl'] = value;
+    this.inputs.outpost_dedicated_network_acl = value;
   }
   public get outpostInboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['outpost_inbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.outpost_inbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set outpostInboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['outpost_inbound_acl_rules'] = value;
+    this.inputs.outpost_inbound_acl_rules = value;
   }
   public get outpostOutboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['outpost_outbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.outpost_outbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set outpostOutboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['outpost_outbound_acl_rules'] = value;
+    this.inputs.outpost_outbound_acl_rules = value;
   }
   public get outpostSubnetAssignIpv6AddressOnCreation(): boolean | undefined {
-    return this.inputs['outpost_subnet_assign_ipv6_address_on_creation'] as boolean | undefined;
+    return this.inputs.outpost_subnet_assign_ipv6_address_on_creation as boolean | undefined;
   }
   public set outpostSubnetAssignIpv6AddressOnCreation(value: boolean | undefined) {
-    this.inputs['outpost_subnet_assign_ipv6_address_on_creation'] = value;
+    this.inputs.outpost_subnet_assign_ipv6_address_on_creation = value;
   }
   public get outpostSubnetIpv6Prefixes(): string[] | undefined {
-    return this.inputs['outpost_subnet_ipv6_prefixes'] as string[] | undefined;
+    return this.inputs.outpost_subnet_ipv6_prefixes as string[] | undefined;
   }
   public set outpostSubnetIpv6Prefixes(value: string[] | undefined) {
-    this.inputs['outpost_subnet_ipv6_prefixes'] = value;
+    this.inputs.outpost_subnet_ipv6_prefixes = value;
   }
   public get outpostSubnetSuffix(): string | undefined {
-    return this.inputs['outpost_subnet_suffix'] as string | undefined;
+    return this.inputs.outpost_subnet_suffix as string | undefined;
   }
   public set outpostSubnetSuffix(value: string | undefined) {
-    this.inputs['outpost_subnet_suffix'] = value;
+    this.inputs.outpost_subnet_suffix = value;
   }
   public get outpostSubnetTags(): { [key: string]: string } | undefined {
-    return this.inputs['outpost_subnet_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.outpost_subnet_tags as { [key: string]: string } | undefined;
   }
   public set outpostSubnetTags(value: { [key: string]: string } | undefined) {
-    this.inputs['outpost_subnet_tags'] = value;
+    this.inputs.outpost_subnet_tags = value;
   }
   public get outpostSubnets(): string[] | undefined {
-    return this.inputs['outpost_subnets'] as string[] | undefined;
+    return this.inputs.outpost_subnets as string[] | undefined;
   }
   public set outpostSubnets(value: string[] | undefined) {
-    this.inputs['outpost_subnets'] = value;
+    this.inputs.outpost_subnets = value;
   }
   public get privateAclTags(): { [key: string]: string } | undefined {
-    return this.inputs['private_acl_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.private_acl_tags as { [key: string]: string } | undefined;
   }
   public set privateAclTags(value: { [key: string]: string } | undefined) {
-    this.inputs['private_acl_tags'] = value;
+    this.inputs.private_acl_tags = value;
   }
   public get privateDedicatedNetworkAcl(): boolean | undefined {
-    return this.inputs['private_dedicated_network_acl'] as boolean | undefined;
+    return this.inputs.private_dedicated_network_acl as boolean | undefined;
   }
   public set privateDedicatedNetworkAcl(value: boolean | undefined) {
-    this.inputs['private_dedicated_network_acl'] = value;
+    this.inputs.private_dedicated_network_acl = value;
   }
   public get privateInboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['private_inbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.private_inbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set privateInboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['private_inbound_acl_rules'] = value;
+    this.inputs.private_inbound_acl_rules = value;
   }
   public get privateOutboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['private_outbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.private_outbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set privateOutboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['private_outbound_acl_rules'] = value;
+    this.inputs.private_outbound_acl_rules = value;
   }
   public get privateRouteTableTags(): { [key: string]: string } | undefined {
-    return this.inputs['private_route_table_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.private_route_table_tags as { [key: string]: string } | undefined;
   }
   public set privateRouteTableTags(value: { [key: string]: string } | undefined) {
-    this.inputs['private_route_table_tags'] = value;
+    this.inputs.private_route_table_tags = value;
   }
   public get privateSubnetAssignIpv6AddressOnCreation(): boolean | undefined {
-    return this.inputs['private_subnet_assign_ipv6_address_on_creation'] as boolean | undefined;
+    return this.inputs.private_subnet_assign_ipv6_address_on_creation as boolean | undefined;
   }
   public set privateSubnetAssignIpv6AddressOnCreation(value: boolean | undefined) {
-    this.inputs['private_subnet_assign_ipv6_address_on_creation'] = value;
+    this.inputs.private_subnet_assign_ipv6_address_on_creation = value;
   }
   public get privateSubnetIpv6Prefixes(): string[] | undefined {
-    return this.inputs['private_subnet_ipv6_prefixes'] as string[] | undefined;
+    return this.inputs.private_subnet_ipv6_prefixes as string[] | undefined;
   }
   public set privateSubnetIpv6Prefixes(value: string[] | undefined) {
-    this.inputs['private_subnet_ipv6_prefixes'] = value;
+    this.inputs.private_subnet_ipv6_prefixes = value;
   }
   public get privateSubnetSuffix(): string | undefined {
-    return this.inputs['private_subnet_suffix'] as string | undefined;
+    return this.inputs.private_subnet_suffix as string | undefined;
   }
   public set privateSubnetSuffix(value: string | undefined) {
-    this.inputs['private_subnet_suffix'] = value;
+    this.inputs.private_subnet_suffix = value;
   }
   public get privateSubnetTags(): { [key: string]: string } | undefined {
-    return this.inputs['private_subnet_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.private_subnet_tags as { [key: string]: string } | undefined;
   }
   public set privateSubnetTags(value: { [key: string]: string } | undefined) {
-    this.inputs['private_subnet_tags'] = value;
+    this.inputs.private_subnet_tags = value;
   }
   public get privateSubnets(): string[] | undefined {
-    return this.inputs['private_subnets'] as string[] | undefined;
+    return this.inputs.private_subnets as string[] | undefined;
   }
   public set privateSubnets(value: string[] | undefined) {
-    this.inputs['private_subnets'] = value;
+    this.inputs.private_subnets = value;
   }
   public get propagateIntraRouteTablesVgw(): boolean | undefined {
-    return this.inputs['propagate_intra_route_tables_vgw'] as boolean | undefined;
+    return this.inputs.propagate_intra_route_tables_vgw as boolean | undefined;
   }
   public set propagateIntraRouteTablesVgw(value: boolean | undefined) {
-    this.inputs['propagate_intra_route_tables_vgw'] = value;
+    this.inputs.propagate_intra_route_tables_vgw = value;
   }
   public get propagatePrivateRouteTablesVgw(): boolean | undefined {
-    return this.inputs['propagate_private_route_tables_vgw'] as boolean | undefined;
+    return this.inputs.propagate_private_route_tables_vgw as boolean | undefined;
   }
   public set propagatePrivateRouteTablesVgw(value: boolean | undefined) {
-    this.inputs['propagate_private_route_tables_vgw'] = value;
+    this.inputs.propagate_private_route_tables_vgw = value;
   }
   public get propagatePublicRouteTablesVgw(): boolean | undefined {
-    return this.inputs['propagate_public_route_tables_vgw'] as boolean | undefined;
+    return this.inputs.propagate_public_route_tables_vgw as boolean | undefined;
   }
   public set propagatePublicRouteTablesVgw(value: boolean | undefined) {
-    this.inputs['propagate_public_route_tables_vgw'] = value;
+    this.inputs.propagate_public_route_tables_vgw = value;
   }
   public get publicAclTags(): { [key: string]: string } | undefined {
-    return this.inputs['public_acl_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.public_acl_tags as { [key: string]: string } | undefined;
   }
   public set publicAclTags(value: { [key: string]: string } | undefined) {
-    this.inputs['public_acl_tags'] = value;
+    this.inputs.public_acl_tags = value;
   }
   public get publicDedicatedNetworkAcl(): boolean | undefined {
-    return this.inputs['public_dedicated_network_acl'] as boolean | undefined;
+    return this.inputs.public_dedicated_network_acl as boolean | undefined;
   }
   public set publicDedicatedNetworkAcl(value: boolean | undefined) {
-    this.inputs['public_dedicated_network_acl'] = value;
+    this.inputs.public_dedicated_network_acl = value;
   }
   public get publicInboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['public_inbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.public_inbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set publicInboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['public_inbound_acl_rules'] = value;
+    this.inputs.public_inbound_acl_rules = value;
   }
   public get publicOutboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['public_outbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.public_outbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set publicOutboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['public_outbound_acl_rules'] = value;
+    this.inputs.public_outbound_acl_rules = value;
   }
   public get publicRouteTableTags(): { [key: string]: string } | undefined {
-    return this.inputs['public_route_table_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.public_route_table_tags as { [key: string]: string } | undefined;
   }
   public set publicRouteTableTags(value: { [key: string]: string } | undefined) {
-    this.inputs['public_route_table_tags'] = value;
+    this.inputs.public_route_table_tags = value;
   }
   public get publicSubnetAssignIpv6AddressOnCreation(): boolean | undefined {
-    return this.inputs['public_subnet_assign_ipv6_address_on_creation'] as boolean | undefined;
+    return this.inputs.public_subnet_assign_ipv6_address_on_creation as boolean | undefined;
   }
   public set publicSubnetAssignIpv6AddressOnCreation(value: boolean | undefined) {
-    this.inputs['public_subnet_assign_ipv6_address_on_creation'] = value;
+    this.inputs.public_subnet_assign_ipv6_address_on_creation = value;
   }
   public get publicSubnetIpv6Prefixes(): string[] | undefined {
-    return this.inputs['public_subnet_ipv6_prefixes'] as string[] | undefined;
+    return this.inputs.public_subnet_ipv6_prefixes as string[] | undefined;
   }
   public set publicSubnetIpv6Prefixes(value: string[] | undefined) {
-    this.inputs['public_subnet_ipv6_prefixes'] = value;
+    this.inputs.public_subnet_ipv6_prefixes = value;
   }
   public get publicSubnetSuffix(): string | undefined {
-    return this.inputs['public_subnet_suffix'] as string | undefined;
+    return this.inputs.public_subnet_suffix as string | undefined;
   }
   public set publicSubnetSuffix(value: string | undefined) {
-    this.inputs['public_subnet_suffix'] = value;
+    this.inputs.public_subnet_suffix = value;
   }
   public get publicSubnetTags(): { [key: string]: string } | undefined {
-    return this.inputs['public_subnet_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.public_subnet_tags as { [key: string]: string } | undefined;
   }
   public set publicSubnetTags(value: { [key: string]: string } | undefined) {
-    this.inputs['public_subnet_tags'] = value;
+    this.inputs.public_subnet_tags = value;
   }
   public get publicSubnets(): string[] | undefined {
-    return this.inputs['public_subnets'] as string[] | undefined;
+    return this.inputs.public_subnets as string[] | undefined;
   }
   public set publicSubnets(value: string[] | undefined) {
-    this.inputs['public_subnets'] = value;
+    this.inputs.public_subnets = value;
   }
   public get redshiftAclTags(): { [key: string]: string } | undefined {
-    return this.inputs['redshift_acl_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.redshift_acl_tags as { [key: string]: string } | undefined;
   }
   public set redshiftAclTags(value: { [key: string]: string } | undefined) {
-    this.inputs['redshift_acl_tags'] = value;
+    this.inputs.redshift_acl_tags = value;
   }
   public get redshiftDedicatedNetworkAcl(): boolean | undefined {
-    return this.inputs['redshift_dedicated_network_acl'] as boolean | undefined;
+    return this.inputs.redshift_dedicated_network_acl as boolean | undefined;
   }
   public set redshiftDedicatedNetworkAcl(value: boolean | undefined) {
-    this.inputs['redshift_dedicated_network_acl'] = value;
+    this.inputs.redshift_dedicated_network_acl = value;
   }
   public get redshiftInboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['redshift_inbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.redshift_inbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set redshiftInboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['redshift_inbound_acl_rules'] = value;
+    this.inputs.redshift_inbound_acl_rules = value;
   }
   public get redshiftOutboundAclRules(): { [key: string]: string }[] | undefined {
-    return this.inputs['redshift_outbound_acl_rules'] as { [key: string]: string }[] | undefined;
+    return this.inputs.redshift_outbound_acl_rules as { [key: string]: string }[] | undefined;
   }
   public set redshiftOutboundAclRules(value: { [key: string]: string }[] | undefined) {
-    this.inputs['redshift_outbound_acl_rules'] = value;
+    this.inputs.redshift_outbound_acl_rules = value;
   }
   public get redshiftRouteTableTags(): { [key: string]: string } | undefined {
-    return this.inputs['redshift_route_table_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.redshift_route_table_tags as { [key: string]: string } | undefined;
   }
   public set redshiftRouteTableTags(value: { [key: string]: string } | undefined) {
-    this.inputs['redshift_route_table_tags'] = value;
+    this.inputs.redshift_route_table_tags = value;
   }
   public get redshiftSubnetAssignIpv6AddressOnCreation(): boolean | undefined {
-    return this.inputs['redshift_subnet_assign_ipv6_address_on_creation'] as boolean | undefined;
+    return this.inputs.redshift_subnet_assign_ipv6_address_on_creation as boolean | undefined;
   }
   public set redshiftSubnetAssignIpv6AddressOnCreation(value: boolean | undefined) {
-    this.inputs['redshift_subnet_assign_ipv6_address_on_creation'] = value;
+    this.inputs.redshift_subnet_assign_ipv6_address_on_creation = value;
   }
   public get redshiftSubnetGroupName(): string | undefined {
-    return this.inputs['redshift_subnet_group_name'] as string | undefined;
+    return this.inputs.redshift_subnet_group_name as string | undefined;
   }
   public set redshiftSubnetGroupName(value: string | undefined) {
-    this.inputs['redshift_subnet_group_name'] = value;
+    this.inputs.redshift_subnet_group_name = value;
   }
   public get redshiftSubnetGroupTags(): { [key: string]: string } | undefined {
-    return this.inputs['redshift_subnet_group_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.redshift_subnet_group_tags as { [key: string]: string } | undefined;
   }
   public set redshiftSubnetGroupTags(value: { [key: string]: string } | undefined) {
-    this.inputs['redshift_subnet_group_tags'] = value;
+    this.inputs.redshift_subnet_group_tags = value;
   }
   public get redshiftSubnetIpv6Prefixes(): string[] | undefined {
-    return this.inputs['redshift_subnet_ipv6_prefixes'] as string[] | undefined;
+    return this.inputs.redshift_subnet_ipv6_prefixes as string[] | undefined;
   }
   public set redshiftSubnetIpv6Prefixes(value: string[] | undefined) {
-    this.inputs['redshift_subnet_ipv6_prefixes'] = value;
+    this.inputs.redshift_subnet_ipv6_prefixes = value;
   }
   public get redshiftSubnetSuffix(): string | undefined {
-    return this.inputs['redshift_subnet_suffix'] as string | undefined;
+    return this.inputs.redshift_subnet_suffix as string | undefined;
   }
   public set redshiftSubnetSuffix(value: string | undefined) {
-    this.inputs['redshift_subnet_suffix'] = value;
+    this.inputs.redshift_subnet_suffix = value;
   }
   public get redshiftSubnetTags(): { [key: string]: string } | undefined {
-    return this.inputs['redshift_subnet_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.redshift_subnet_tags as { [key: string]: string } | undefined;
   }
   public set redshiftSubnetTags(value: { [key: string]: string } | undefined) {
-    this.inputs['redshift_subnet_tags'] = value;
+    this.inputs.redshift_subnet_tags = value;
   }
   public get redshiftSubnets(): string[] | undefined {
-    return this.inputs['redshift_subnets'] as string[] | undefined;
+    return this.inputs.redshift_subnets as string[] | undefined;
   }
   public set redshiftSubnets(value: string[] | undefined) {
-    this.inputs['redshift_subnets'] = value;
+    this.inputs.redshift_subnets = value;
   }
   public get reuseNatIps(): boolean | undefined {
-    return this.inputs['reuse_nat_ips'] as boolean | undefined;
+    return this.inputs.reuse_nat_ips as boolean | undefined;
   }
   public set reuseNatIps(value: boolean | undefined) {
-    this.inputs['reuse_nat_ips'] = value;
+    this.inputs.reuse_nat_ips = value;
   }
   public get secondaryCidrBlocks(): string[] | undefined {
-    return this.inputs['secondary_cidr_blocks'] as string[] | undefined;
+    return this.inputs.secondary_cidr_blocks as string[] | undefined;
   }
   public set secondaryCidrBlocks(value: string[] | undefined) {
-    this.inputs['secondary_cidr_blocks'] = value;
+    this.inputs.secondary_cidr_blocks = value;
   }
   public get singleNatGateway(): boolean | undefined {
-    return this.inputs['single_nat_gateway'] as boolean | undefined;
+    return this.inputs.single_nat_gateway as boolean | undefined;
   }
   public set singleNatGateway(value: boolean | undefined) {
-    this.inputs['single_nat_gateway'] = value;
+    this.inputs.single_nat_gateway = value;
   }
   public get tags(): { [key: string]: string } | undefined {
-    return this.inputs['tags'] as { [key: string]: string } | undefined;
+    return this.inputs.tags as { [key: string]: string } | undefined;
   }
   public set tags(value: { [key: string]: string } | undefined) {
-    this.inputs['tags'] = value;
+    this.inputs.tags = value;
   }
   public get vpcFlowLogPermissionsBoundary(): string | undefined {
-    return this.inputs['vpc_flow_log_permissions_boundary'] as string | undefined;
+    return this.inputs.vpc_flow_log_permissions_boundary as string | undefined;
   }
   public set vpcFlowLogPermissionsBoundary(value: string | undefined) {
-    this.inputs['vpc_flow_log_permissions_boundary'] = value;
+    this.inputs.vpc_flow_log_permissions_boundary = value;
   }
   public get vpcFlowLogTags(): { [key: string]: string } | undefined {
-    return this.inputs['vpc_flow_log_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.vpc_flow_log_tags as { [key: string]: string } | undefined;
   }
   public set vpcFlowLogTags(value: { [key: string]: string } | undefined) {
-    this.inputs['vpc_flow_log_tags'] = value;
+    this.inputs.vpc_flow_log_tags = value;
   }
   public get vpcTags(): { [key: string]: string } | undefined {
-    return this.inputs['vpc_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.vpc_tags as { [key: string]: string } | undefined;
   }
   public set vpcTags(value: { [key: string]: string } | undefined) {
-    this.inputs['vpc_tags'] = value;
+    this.inputs.vpc_tags = value;
   }
   public get vpnGatewayAz(): string | undefined {
-    return this.inputs['vpn_gateway_az'] as string | undefined;
+    return this.inputs.vpn_gateway_az as string | undefined;
   }
   public set vpnGatewayAz(value: string | undefined) {
-    this.inputs['vpn_gateway_az'] = value;
+    this.inputs.vpn_gateway_az = value;
   }
   public get vpnGatewayId(): string | undefined {
-    return this.inputs['vpn_gateway_id'] as string | undefined;
+    return this.inputs.vpn_gateway_id as string | undefined;
   }
   public set vpnGatewayId(value: string | undefined) {
-    this.inputs['vpn_gateway_id'] = value;
+    this.inputs.vpn_gateway_id = value;
   }
   public get vpnGatewayTags(): { [key: string]: string } | undefined {
-    return this.inputs['vpn_gateway_tags'] as { [key: string]: string } | undefined;
+    return this.inputs.vpn_gateway_tags as { [key: string]: string } | undefined;
   }
   public set vpnGatewayTags(value: { [key: string]: string } | undefined) {
-    this.inputs['vpn_gateway_tags'] = value;
+    this.inputs.vpn_gateway_tags = value;
   }
   public get azsOutput(): string {
-    return this.interpolationForOutput('azs')
+    return this.interpolationForOutput('azs');
   }
   public get cgwArnsOutput(): string {
-    return this.interpolationForOutput('cgw_arns')
+    return this.interpolationForOutput('cgw_arns');
   }
   public get cgwIdsOutput(): string {
-    return this.interpolationForOutput('cgw_ids')
+    return this.interpolationForOutput('cgw_ids');
   }
   public get databaseInternetGatewayRouteIdOutput(): string {
-    return this.interpolationForOutput('database_internet_gateway_route_id')
+    return this.interpolationForOutput('database_internet_gateway_route_id');
   }
   public get databaseIpv6EgressRouteIdOutput(): string {
-    return this.interpolationForOutput('database_ipv6_egress_route_id')
+    return this.interpolationForOutput('database_ipv6_egress_route_id');
   }
   public get databaseNatGatewayRouteIdsOutput(): string {
-    return this.interpolationForOutput('database_nat_gateway_route_ids')
+    return this.interpolationForOutput('database_nat_gateway_route_ids');
   }
   public get databaseNetworkAclArnOutput(): string {
-    return this.interpolationForOutput('database_network_acl_arn')
+    return this.interpolationForOutput('database_network_acl_arn');
   }
   public get databaseNetworkAclIdOutput(): string {
-    return this.interpolationForOutput('database_network_acl_id')
+    return this.interpolationForOutput('database_network_acl_id');
   }
   public get databaseRouteTableAssociationIdsOutput(): string {
-    return this.interpolationForOutput('database_route_table_association_ids')
+    return this.interpolationForOutput('database_route_table_association_ids');
   }
   public get databaseRouteTableIdsOutput(): string {
-    return this.interpolationForOutput('database_route_table_ids')
+    return this.interpolationForOutput('database_route_table_ids');
   }
   public get databaseSubnetArnsOutput(): string {
-    return this.interpolationForOutput('database_subnet_arns')
+    return this.interpolationForOutput('database_subnet_arns');
   }
   public get databaseSubnetGroupOutput(): string {
-    return this.interpolationForOutput('database_subnet_group')
+    return this.interpolationForOutput('database_subnet_group');
   }
   public get databaseSubnetGroupNameOutput(): string {
-    return this.interpolationForOutput('database_subnet_group_name')
+    return this.interpolationForOutput('database_subnet_group_name');
   }
   public get databaseSubnetsOutput(): string {
-    return this.interpolationForOutput('database_subnets')
+    return this.interpolationForOutput('database_subnets');
   }
   public get databaseSubnetsCidrBlocksOutput(): string {
-    return this.interpolationForOutput('database_subnets_cidr_blocks')
+    return this.interpolationForOutput('database_subnets_cidr_blocks');
   }
   public get databaseSubnetsIpv6CidrBlocksOutput(): string {
-    return this.interpolationForOutput('database_subnets_ipv6_cidr_blocks')
+    return this.interpolationForOutput('database_subnets_ipv6_cidr_blocks');
   }
   public get defaultNetworkAclIdOutput(): string {
-    return this.interpolationForOutput('default_network_acl_id')
+    return this.interpolationForOutput('default_network_acl_id');
   }
   public get defaultRouteTableIdOutput(): string {
-    return this.interpolationForOutput('default_route_table_id')
+    return this.interpolationForOutput('default_route_table_id');
   }
   public get defaultSecurityGroupIdOutput(): string {
-    return this.interpolationForOutput('default_security_group_id')
+    return this.interpolationForOutput('default_security_group_id');
   }
   public get defaultVpcArnOutput(): string {
-    return this.interpolationForOutput('default_vpc_arn')
+    return this.interpolationForOutput('default_vpc_arn');
   }
   public get defaultVpcCidrBlockOutput(): string {
-    return this.interpolationForOutput('default_vpc_cidr_block')
+    return this.interpolationForOutput('default_vpc_cidr_block');
   }
   public get defaultVpcDefaultNetworkAclIdOutput(): string {
-    return this.interpolationForOutput('default_vpc_default_network_acl_id')
+    return this.interpolationForOutput('default_vpc_default_network_acl_id');
   }
   public get defaultVpcDefaultRouteTableIdOutput(): string {
-    return this.interpolationForOutput('default_vpc_default_route_table_id')
+    return this.interpolationForOutput('default_vpc_default_route_table_id');
   }
   public get defaultVpcDefaultSecurityGroupIdOutput(): string {
-    return this.interpolationForOutput('default_vpc_default_security_group_id')
+    return this.interpolationForOutput('default_vpc_default_security_group_id');
   }
   public get defaultVpcEnableDnsHostnamesOutput(): string {
-    return this.interpolationForOutput('default_vpc_enable_dns_hostnames')
+    return this.interpolationForOutput('default_vpc_enable_dns_hostnames');
   }
   public get defaultVpcEnableDnsSupportOutput(): string {
-    return this.interpolationForOutput('default_vpc_enable_dns_support')
+    return this.interpolationForOutput('default_vpc_enable_dns_support');
   }
   public get defaultVpcIdOutput(): string {
-    return this.interpolationForOutput('default_vpc_id')
+    return this.interpolationForOutput('default_vpc_id');
   }
   public get defaultVpcInstanceTenancyOutput(): string {
-    return this.interpolationForOutput('default_vpc_instance_tenancy')
+    return this.interpolationForOutput('default_vpc_instance_tenancy');
   }
   public get defaultVpcMainRouteTableIdOutput(): string {
-    return this.interpolationForOutput('default_vpc_main_route_table_id')
+    return this.interpolationForOutput('default_vpc_main_route_table_id');
   }
   public get dhcpOptionsIdOutput(): string {
-    return this.interpolationForOutput('dhcp_options_id')
+    return this.interpolationForOutput('dhcp_options_id');
   }
   public get egressOnlyInternetGatewayIdOutput(): string {
-    return this.interpolationForOutput('egress_only_internet_gateway_id')
+    return this.interpolationForOutput('egress_only_internet_gateway_id');
   }
   public get elasticacheNetworkAclArnOutput(): string {
-    return this.interpolationForOutput('elasticache_network_acl_arn')
+    return this.interpolationForOutput('elasticache_network_acl_arn');
   }
   public get elasticacheNetworkAclIdOutput(): string {
-    return this.interpolationForOutput('elasticache_network_acl_id')
+    return this.interpolationForOutput('elasticache_network_acl_id');
   }
   public get elasticacheRouteTableAssociationIdsOutput(): string {
-    return this.interpolationForOutput('elasticache_route_table_association_ids')
+    return this.interpolationForOutput('elasticache_route_table_association_ids');
   }
   public get elasticacheRouteTableIdsOutput(): string {
-    return this.interpolationForOutput('elasticache_route_table_ids')
+    return this.interpolationForOutput('elasticache_route_table_ids');
   }
   public get elasticacheSubnetArnsOutput(): string {
-    return this.interpolationForOutput('elasticache_subnet_arns')
+    return this.interpolationForOutput('elasticache_subnet_arns');
   }
   public get elasticacheSubnetGroupOutput(): string {
-    return this.interpolationForOutput('elasticache_subnet_group')
+    return this.interpolationForOutput('elasticache_subnet_group');
   }
   public get elasticacheSubnetGroupNameOutput(): string {
-    return this.interpolationForOutput('elasticache_subnet_group_name')
+    return this.interpolationForOutput('elasticache_subnet_group_name');
   }
   public get elasticacheSubnetsOutput(): string {
-    return this.interpolationForOutput('elasticache_subnets')
+    return this.interpolationForOutput('elasticache_subnets');
   }
   public get elasticacheSubnetsCidrBlocksOutput(): string {
-    return this.interpolationForOutput('elasticache_subnets_cidr_blocks')
+    return this.interpolationForOutput('elasticache_subnets_cidr_blocks');
   }
   public get elasticacheSubnetsIpv6CidrBlocksOutput(): string {
-    return this.interpolationForOutput('elasticache_subnets_ipv6_cidr_blocks')
+    return this.interpolationForOutput('elasticache_subnets_ipv6_cidr_blocks');
   }
   public get igwArnOutput(): string {
-    return this.interpolationForOutput('igw_arn')
+    return this.interpolationForOutput('igw_arn');
   }
   public get igwIdOutput(): string {
-    return this.interpolationForOutput('igw_id')
+    return this.interpolationForOutput('igw_id');
   }
   public get intraNetworkAclArnOutput(): string {
-    return this.interpolationForOutput('intra_network_acl_arn')
+    return this.interpolationForOutput('intra_network_acl_arn');
   }
   public get intraNetworkAclIdOutput(): string {
-    return this.interpolationForOutput('intra_network_acl_id')
+    return this.interpolationForOutput('intra_network_acl_id');
   }
   public get intraRouteTableAssociationIdsOutput(): string {
-    return this.interpolationForOutput('intra_route_table_association_ids')
+    return this.interpolationForOutput('intra_route_table_association_ids');
   }
   public get intraRouteTableIdsOutput(): string {
-    return this.interpolationForOutput('intra_route_table_ids')
+    return this.interpolationForOutput('intra_route_table_ids');
   }
   public get intraSubnetArnsOutput(): string {
-    return this.interpolationForOutput('intra_subnet_arns')
+    return this.interpolationForOutput('intra_subnet_arns');
   }
   public get intraSubnetsOutput(): string {
-    return this.interpolationForOutput('intra_subnets')
+    return this.interpolationForOutput('intra_subnets');
   }
   public get intraSubnetsCidrBlocksOutput(): string {
-    return this.interpolationForOutput('intra_subnets_cidr_blocks')
+    return this.interpolationForOutput('intra_subnets_cidr_blocks');
   }
   public get intraSubnetsIpv6CidrBlocksOutput(): string {
-    return this.interpolationForOutput('intra_subnets_ipv6_cidr_blocks')
+    return this.interpolationForOutput('intra_subnets_ipv6_cidr_blocks');
   }
   public get nameOutput(): string {
-    return this.interpolationForOutput('name')
+    return this.interpolationForOutput('name');
   }
   public get natIdsOutput(): string {
-    return this.interpolationForOutput('nat_ids')
+    return this.interpolationForOutput('nat_ids');
   }
   public get natPublicIpsOutput(): string {
-    return this.interpolationForOutput('nat_public_ips')
+    return this.interpolationForOutput('nat_public_ips');
   }
   public get natgwIdsOutput(): string {
-    return this.interpolationForOutput('natgw_ids')
+    return this.interpolationForOutput('natgw_ids');
   }
   public get outpostNetworkAclArnOutput(): string {
-    return this.interpolationForOutput('outpost_network_acl_arn')
+    return this.interpolationForOutput('outpost_network_acl_arn');
   }
   public get outpostNetworkAclIdOutput(): string {
-    return this.interpolationForOutput('outpost_network_acl_id')
+    return this.interpolationForOutput('outpost_network_acl_id');
   }
   public get outpostSubnetArnsOutput(): string {
-    return this.interpolationForOutput('outpost_subnet_arns')
+    return this.interpolationForOutput('outpost_subnet_arns');
   }
   public get outpostSubnetsOutput(): string {
-    return this.interpolationForOutput('outpost_subnets')
+    return this.interpolationForOutput('outpost_subnets');
   }
   public get outpostSubnetsCidrBlocksOutput(): string {
-    return this.interpolationForOutput('outpost_subnets_cidr_blocks')
+    return this.interpolationForOutput('outpost_subnets_cidr_blocks');
   }
   public get outpostSubnetsIpv6CidrBlocksOutput(): string {
-    return this.interpolationForOutput('outpost_subnets_ipv6_cidr_blocks')
+    return this.interpolationForOutput('outpost_subnets_ipv6_cidr_blocks');
   }
   public get privateIpv6EgressRouteIdsOutput(): string {
-    return this.interpolationForOutput('private_ipv6_egress_route_ids')
+    return this.interpolationForOutput('private_ipv6_egress_route_ids');
   }
   public get privateNatGatewayRouteIdsOutput(): string {
-    return this.interpolationForOutput('private_nat_gateway_route_ids')
+    return this.interpolationForOutput('private_nat_gateway_route_ids');
   }
   public get privateNetworkAclArnOutput(): string {
-    return this.interpolationForOutput('private_network_acl_arn')
+    return this.interpolationForOutput('private_network_acl_arn');
   }
   public get privateNetworkAclIdOutput(): string {
-    return this.interpolationForOutput('private_network_acl_id')
+    return this.interpolationForOutput('private_network_acl_id');
   }
   public get privateRouteTableAssociationIdsOutput(): string {
-    return this.interpolationForOutput('private_route_table_association_ids')
+    return this.interpolationForOutput('private_route_table_association_ids');
   }
   public get privateRouteTableIdsOutput(): string {
-    return this.interpolationForOutput('private_route_table_ids')
+    return this.interpolationForOutput('private_route_table_ids');
   }
   public get privateSubnetArnsOutput(): string {
-    return this.interpolationForOutput('private_subnet_arns')
+    return this.interpolationForOutput('private_subnet_arns');
   }
   public get privateSubnetsOutput(): string {
-    return this.interpolationForOutput('private_subnets')
+    return this.interpolationForOutput('private_subnets');
   }
   public get privateSubnetsCidrBlocksOutput(): string {
-    return this.interpolationForOutput('private_subnets_cidr_blocks')
+    return this.interpolationForOutput('private_subnets_cidr_blocks');
   }
   public get privateSubnetsIpv6CidrBlocksOutput(): string {
-    return this.interpolationForOutput('private_subnets_ipv6_cidr_blocks')
+    return this.interpolationForOutput('private_subnets_ipv6_cidr_blocks');
   }
   public get publicInternetGatewayIpv6RouteIdOutput(): string {
-    return this.interpolationForOutput('public_internet_gateway_ipv6_route_id')
+    return this.interpolationForOutput('public_internet_gateway_ipv6_route_id');
   }
   public get publicInternetGatewayRouteIdOutput(): string {
-    return this.interpolationForOutput('public_internet_gateway_route_id')
+    return this.interpolationForOutput('public_internet_gateway_route_id');
   }
   public get publicNetworkAclArnOutput(): string {
-    return this.interpolationForOutput('public_network_acl_arn')
+    return this.interpolationForOutput('public_network_acl_arn');
   }
   public get publicNetworkAclIdOutput(): string {
-    return this.interpolationForOutput('public_network_acl_id')
+    return this.interpolationForOutput('public_network_acl_id');
   }
   public get publicRouteTableAssociationIdsOutput(): string {
-    return this.interpolationForOutput('public_route_table_association_ids')
+    return this.interpolationForOutput('public_route_table_association_ids');
   }
   public get publicRouteTableIdsOutput(): string {
-    return this.interpolationForOutput('public_route_table_ids')
+    return this.interpolationForOutput('public_route_table_ids');
   }
   public get publicSubnetArnsOutput(): string {
-    return this.interpolationForOutput('public_subnet_arns')
+    return this.interpolationForOutput('public_subnet_arns');
   }
   public get publicSubnetsOutput(): string {
-    return this.interpolationForOutput('public_subnets')
+    return this.interpolationForOutput('public_subnets');
   }
   public get publicSubnetsCidrBlocksOutput(): string {
-    return this.interpolationForOutput('public_subnets_cidr_blocks')
+    return this.interpolationForOutput('public_subnets_cidr_blocks');
   }
   public get publicSubnetsIpv6CidrBlocksOutput(): string {
-    return this.interpolationForOutput('public_subnets_ipv6_cidr_blocks')
+    return this.interpolationForOutput('public_subnets_ipv6_cidr_blocks');
   }
   public get redshiftNetworkAclArnOutput(): string {
-    return this.interpolationForOutput('redshift_network_acl_arn')
+    return this.interpolationForOutput('redshift_network_acl_arn');
   }
   public get redshiftNetworkAclIdOutput(): string {
-    return this.interpolationForOutput('redshift_network_acl_id')
+    return this.interpolationForOutput('redshift_network_acl_id');
   }
   public get redshiftPublicRouteTableAssociationIdsOutput(): string {
-    return this.interpolationForOutput('redshift_public_route_table_association_ids')
+    return this.interpolationForOutput('redshift_public_route_table_association_ids');
   }
   public get redshiftRouteTableAssociationIdsOutput(): string {
-    return this.interpolationForOutput('redshift_route_table_association_ids')
+    return this.interpolationForOutput('redshift_route_table_association_ids');
   }
   public get redshiftRouteTableIdsOutput(): string {
-    return this.interpolationForOutput('redshift_route_table_ids')
+    return this.interpolationForOutput('redshift_route_table_ids');
   }
   public get redshiftSubnetArnsOutput(): string {
-    return this.interpolationForOutput('redshift_subnet_arns')
+    return this.interpolationForOutput('redshift_subnet_arns');
   }
   public get redshiftSubnetGroupOutput(): string {
-    return this.interpolationForOutput('redshift_subnet_group')
+    return this.interpolationForOutput('redshift_subnet_group');
   }
   public get redshiftSubnetsOutput(): string {
-    return this.interpolationForOutput('redshift_subnets')
+    return this.interpolationForOutput('redshift_subnets');
   }
   public get redshiftSubnetsCidrBlocksOutput(): string {
-    return this.interpolationForOutput('redshift_subnets_cidr_blocks')
+    return this.interpolationForOutput('redshift_subnets_cidr_blocks');
   }
   public get redshiftSubnetsIpv6CidrBlocksOutput(): string {
-    return this.interpolationForOutput('redshift_subnets_ipv6_cidr_blocks')
+    return this.interpolationForOutput('redshift_subnets_ipv6_cidr_blocks');
   }
   public get thisCustomerGatewayOutput(): string {
-    return this.interpolationForOutput('this_customer_gateway')
+    return this.interpolationForOutput('this_customer_gateway');
   }
   public get vgwArnOutput(): string {
-    return this.interpolationForOutput('vgw_arn')
+    return this.interpolationForOutput('vgw_arn');
   }
   public get vgwIdOutput(): string {
-    return this.interpolationForOutput('vgw_id')
+    return this.interpolationForOutput('vgw_id');
   }
   public get vpcArnOutput(): string {
-    return this.interpolationForOutput('vpc_arn')
+    return this.interpolationForOutput('vpc_arn');
   }
   public get vpcCidrBlockOutput(): string {
-    return this.interpolationForOutput('vpc_cidr_block')
+    return this.interpolationForOutput('vpc_cidr_block');
   }
   public get vpcEnableDnsHostnamesOutput(): string {
-    return this.interpolationForOutput('vpc_enable_dns_hostnames')
+    return this.interpolationForOutput('vpc_enable_dns_hostnames');
   }
   public get vpcEnableDnsSupportOutput(): string {
-    return this.interpolationForOutput('vpc_enable_dns_support')
+    return this.interpolationForOutput('vpc_enable_dns_support');
   }
   public get vpcFlowLogCloudwatchIamRoleArnOutput(): string {
-    return this.interpolationForOutput('vpc_flow_log_cloudwatch_iam_role_arn')
+    return this.interpolationForOutput('vpc_flow_log_cloudwatch_iam_role_arn');
   }
   public get vpcFlowLogDestinationArnOutput(): string {
-    return this.interpolationForOutput('vpc_flow_log_destination_arn')
+    return this.interpolationForOutput('vpc_flow_log_destination_arn');
   }
   public get vpcFlowLogDestinationTypeOutput(): string {
-    return this.interpolationForOutput('vpc_flow_log_destination_type')
+    return this.interpolationForOutput('vpc_flow_log_destination_type');
   }
   public get vpcFlowLogIdOutput(): string {
-    return this.interpolationForOutput('vpc_flow_log_id')
+    return this.interpolationForOutput('vpc_flow_log_id');
   }
   public get vpcIdOutput(): string {
-    return this.interpolationForOutput('vpc_id')
+    return this.interpolationForOutput('vpc_id');
   }
   public get vpcInstanceTenancyOutput(): string {
-    return this.interpolationForOutput('vpc_instance_tenancy')
+    return this.interpolationForOutput('vpc_instance_tenancy');
   }
   public get vpcIpv6AssociationIdOutput(): string {
-    return this.interpolationForOutput('vpc_ipv6_association_id')
+    return this.interpolationForOutput('vpc_ipv6_association_id');
   }
   public get vpcIpv6CidrBlockOutput(): string {
-    return this.interpolationForOutput('vpc_ipv6_cidr_block')
+    return this.interpolationForOutput('vpc_ipv6_cidr_block');
   }
   public get vpcMainRouteTableIdOutput(): string {
-    return this.interpolationForOutput('vpc_main_route_table_id')
+    return this.interpolationForOutput('vpc_main_route_table_id');
   }
   public get vpcOwnerIdOutput(): string {
-    return this.interpolationForOutput('vpc_owner_id')
+    return this.interpolationForOutput('vpc_owner_id');
   }
   public get vpcSecondaryCidrBlocksOutput(): string {
-    return this.interpolationForOutput('vpc_secondary_cidr_blocks')
+    return this.interpolationForOutput('vpc_secondary_cidr_blocks');
   }
   protected synthesizeAttributes() {
     return this.inputs;
