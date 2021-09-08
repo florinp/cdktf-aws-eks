@@ -1,4 +1,5 @@
 import { App, TerraformStack } from 'cdktf';
+import { KubernetesVersion } from '.';
 import { Cluster, CapacityType } from './main';
 
 const app = new App();
@@ -12,7 +13,9 @@ const env = {
 
 new Cluster(stack, 'demo-cluster', {
   region: env.region,
-  availabilityZones: env.availabilityZones,
+  // availabilityZones: env.availabilityZones,
+  version: KubernetesVersion.V1_21,
+  privateSubnets: ['subnet-049c36e0d1462b501', 'subnet-00516170171b3d102', 'subnet-0bf0e41cd28c1dfa0'],
   clusterName: 'cdktf-eks-demo',
   minCapacity: 1,
   capacityType: CapacityType.SPOT,

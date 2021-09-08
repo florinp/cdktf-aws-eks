@@ -29,6 +29,10 @@ export interface ClusterProps {
    */
   readonly clusterName?: string;
   /**
+   * Kubernetes cluster version
+   */
+  readonly version: KubernetesVersion;
+  /**
    * The desired capacity for the nodegroup.
    * @default 1
    */
@@ -62,6 +66,63 @@ export enum CapacityType {
 }
 
 /**
+ * Kubernetes cluster version
+ */
+export class KubernetesVersion {
+  /**
+   * Kubernetes version 1.14
+   */
+  public static readonly V1_14 = KubernetesVersion.of('1.14');
+
+  /**
+   * Kubernetes version 1.15
+   */
+  public static readonly V1_15 = KubernetesVersion.of('1.15');
+
+  /**
+   * Kubernetes version 1.16
+   */
+  public static readonly V1_16 = KubernetesVersion.of('1.16');
+
+  /**
+   * Kubernetes version 1.17
+   */
+  public static readonly V1_17 = KubernetesVersion.of('1.17');
+
+  /**
+   * Kubernetes version 1.18
+   */
+  public static readonly V1_18 = KubernetesVersion.of('1.18');
+
+  /**
+   * Kubernetes version 1.19
+   */
+  public static readonly V1_19 = KubernetesVersion.of('1.19');
+
+  /**
+   * Kubernetes version 1.20
+   */
+  public static readonly V1_20 = KubernetesVersion.of('1.20');
+
+  /**
+   * Kubernetes version 1.21
+   */
+  public static readonly V1_21 = KubernetesVersion.of('1.21');
+
+  /**
+   * Custom cluster version
+   * @param version custom version number
+   */
+  public static of(version: string) { return new KubernetesVersion(version); }
+  /**
+   *
+   * @param version cluster version number
+   */
+  private constructor(public readonly version: string) { }
+}
+
+
+/**
  * The Amazon EKS Cluster with a default nodegroup
  */
 export class Cluster extends Construct {
@@ -72,7 +133,7 @@ export class Cluster extends Construct {
   private readonly desiredCapacity: number;
   private readonly minCapacity: number;
   private readonly maxCapacity: number;
-  constructor(scope: Construct, id: string, props: ClusterProps = {}) {
+  constructor(scope: Construct, id: string, props: ClusterProps) {
     super(scope, id);
 
     this.props = props;
@@ -97,7 +158,7 @@ export class Cluster extends Construct {
     this.clusterName = props.clusterName ?? `${id}cluster`;
     const cluster = new EksCluster(this, 'EksCluster', {
       name: this.clusterName,
-      version: '1.21',
+      version: props.version.version,
       vpcConfig: [
         {
           subnetIds: this.privateSubnets,

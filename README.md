@@ -26,6 +26,7 @@ const env = {
 new Cluster(stack, 'demo-cluster', {
   region: env.region,
   availabilityZones: env.availabilityZones,
+  version: KubernetesVersion.V1_21,
   minCapacity: 1,
 });
 
@@ -40,6 +41,7 @@ To create the cluster in a new VPC, specify `availabilityZones` of the region.
 new Cluster(stack, 'demo-cluster', {
   region: env.region,
   availabilityZones: env.availabilityZones,
+  version: KubernetesVersion.V1_21,
 });
 ```
 
@@ -51,5 +53,6 @@ new Cluster(stack, 'demo-cluster', {
   region: env.region,
   privateSubnets: ['subnet-111','subnet-222','subnet-333' ],
   publicSubnets: ['subnet-444','subnet-555','subnet-666' ],
+  version: KubernetesVersion.V1_21,
 });
 ```

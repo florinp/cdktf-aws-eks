@@ -1,5 +1,5 @@
 import { App, TerraformStack } from 'cdktf';
-import { Cluster } from '../src';
+import { Cluster, KubernetesVersion } from '../src';
 
 
 test('default', () => {
@@ -7,7 +7,16 @@ test('default', () => {
 
   const stack = new TerraformStack(app, 'cdktf-eks-demo');
 
-  new Cluster(stack, 'Cluster');
+  const env = {
+    region: 'ap-northeast-1',
+    availabilityZones: ['ap-northeast-1a', 'ap-northeast-1c', 'ap-northeast-1d'],
+  };
+
+  new Cluster(stack, 'Cluster', {
+    version: KubernetesVersion.V1_21,
+    region: env.region,
+    availabilityZones: env.availabilityZones,
+  });
 
   expect(stack.toTerraform());
 });
