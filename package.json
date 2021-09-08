@@ -56,7 +56,7 @@
     "projen": "^0.27.50",
     "standard-version": "^9",
     "ts-jest": "^27.0.5",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.10"
   },
   "peerDependencies": {
     "@cdktf/provider-aws": "^2.0.9",
