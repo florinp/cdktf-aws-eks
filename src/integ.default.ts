@@ -1,6 +1,5 @@
 import { App, TerraformStack } from 'cdktf';
-import { KubernetesVersion } from '.';
-import { Cluster, CapacityType } from './main';
+import { KubernetesVersion, Cluster, CapacityType } from '.';
 
 const app = new App();
 

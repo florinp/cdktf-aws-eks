@@ -1,6 +1,6 @@
-import { AwsProvider, EksNodeGroup, EksCluster, DataAwsEksClusterAuth, IamRole, IamPolicyAttachment, DataAwsAvailabilityZones as AZ } from '@cdktf/provider-aws';
+import { AwsProvider, EksNodeGroup, EksCluster, DataAwsEksClusterAuth, IamRole, IamPolicyAttachment, DataAwsAvailabilityZones as AZ, DataAwsSubnetIds } from '@cdktf/provider-aws';
 import * as k8s from '@cdktf/provider-kubernetes';
-import { TerraformOutput, Token } from 'cdktf';
+import { TerraformOutput, Token, ITerraformDependable } from 'cdktf';
 import { Construct } from 'constructs';
 import * as awsVpc from './imports/modules/terraform-aws-modules/vpc/aws';
 
@@ -126,6 +126,8 @@ export class Cluster extends Construct {
   readonly publicSubnets: string[];
   readonly privateSubnets: string[];
   readonly clusterName: string;
+  readonly vpc?: any;
+  readonly vpcId?: string;
   private readonly desiredCapacity: number;
   private readonly minCapacity: number;
   private readonly maxCapacity: number;
@@ -141,8 +143,11 @@ export class Cluster extends Construct {
       region: props.region ?? 'us-east-1',
     });
 
+    // no private subnets given
     if (!props.privateSubnets) {
       const vpc = this._createVpc();
+      this.vpc = vpc;
+      this.vpcId = Token.asString(vpc.vpcIdOutput);
       this.privateSubnets = Token.asList(vpc.privateSubnetsOutput);
       this.publicSubnets = Token.asList(vpc.publicSubnetsOutput);
     } else {
@@ -157,11 +162,18 @@ export class Cluster extends Construct {
       version: props.version.version,
       vpcConfig: [
         {
-          subnetIds: this.privateSubnets,
+          // the cluster should associate with all available subnets
+          subnetIds: this.vpcId ? this.getAllSubnetsFromVpcId(this.vpcId, [this.vpc]).ids :
+            this.privateSubnets.concat(this.publicSubnets),
         },
       ],
       roleArn: this._createClusterRole().arn,
     });
+
+    // cluster should be created after vpc
+    if (this.vpc) {
+      cluster.constructNode.addDependency(this.vpc);
+    }
 
     new EksNodeGroup(this, 'NG', {
       clusterName: cluster.name, // ensure the dependency
@@ -269,5 +281,11 @@ export class Cluster extends Construct {
       roles: [role.name],
     });
     return role;
+  }
+  private getAllSubnetsFromVpcId(vpcId: string, dependable?: ITerraformDependable[]) {
+    return new DataAwsSubnetIds(this, `${vpcId}subnets`, {
+      vpcId,
+      dependsOn: dependable,
+    });
   }
 }

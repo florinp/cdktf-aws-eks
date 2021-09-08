@@ -60,6 +60,18 @@ new Cluster(scope: Construct, id: string, props: ClusterProps)
 
 ---
 
+##### `vpc`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.Cluster.property.vpc"></a>
+
+- *Type:* `any`
+
+---
+
+##### `vpcId`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.Cluster.property.vpcId"></a>
+
+- *Type:* `string`
+
+---
+
 
 ## Structs <a name="Structs"></a>
 
