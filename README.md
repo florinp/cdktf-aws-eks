@@ -49,7 +49,7 @@ To deploy in any existing VPC, specify the `privateSubnets` and `publicSubnets`(
 ```ts
 new Cluster(stack, 'demo-cluster', {
   region: env.region,
-  privateSubnets: ['subnet-111','subnet-222','subnet-333' ]
-  publicSubnets: ['subnet-444','subnet-555','subnet-666' ]
+  privateSubnets: ['subnet-111','subnet-222','subnet-333' ],
+  publicSubnets: ['subnet-444','subnet-555','subnet-666' ],
 });
 ```

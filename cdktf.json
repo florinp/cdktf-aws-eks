@@ -1,6 +1,6 @@
 {
   "language": "typescript",
-  "app": "yarn compile && node lib/integ.default.js",
+  "app": "npx ts-node src/integ.default.ts",
   "terraformModules": [
     "terraform-aws-modules/vpc/aws"
   ],

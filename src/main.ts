@@ -93,8 +93,6 @@ export class Cluster extends Construct {
       this.publicSubnets = props.publicSubnets!;
     }
 
-    new TerraformOutput(this, 'privateSubnets', { value: this.privateSubnets });
-
     // create the cluster
     this.clusterName = props.clusterName ?? `${id}cluster`;
     const cluster = new EksCluster(this, 'EksCluster', {
