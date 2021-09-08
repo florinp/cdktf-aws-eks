@@ -109,7 +109,7 @@ export class Cluster extends Construct {
     });
 
     new EksNodeGroup(this, 'NG', {
-      clusterName: this.clusterName,
+      clusterName: cluster.name, // ensure the dependency
       nodeRoleArn: this._createNodeGroupRole().arn,
       subnetIds: this.privateSubnets,
       scalingConfig: [
