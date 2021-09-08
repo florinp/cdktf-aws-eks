@@ -83,14 +83,6 @@ Kubernetes cluster version.
 
 ---
 
-##### `availabilityZones`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ClusterProps.property.availabilityZones"></a>
-
-- *Type:* `string`[]
-
-list of available zones in the region for a new VPC.
-
----
-
 ##### `capacityType`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ClusterProps.property.capacityType"></a>
 
 - *Type:* [`@pahud/cdktf-aws-eks.CapacityType`](#@pahud/cdktf-aws-eks.CapacityType)

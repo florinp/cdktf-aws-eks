@@ -1,4 +1,4 @@
-import { AwsProvider, EksNodeGroup, EksCluster, DataAwsEksClusterAuth, IamRole, IamPolicyAttachment } from '@cdktf/provider-aws';
+import { AwsProvider, EksNodeGroup, EksCluster, DataAwsEksClusterAuth, IamRole, IamPolicyAttachment, DataAwsAvailabilityZones as AZ } from '@cdktf/provider-aws';
 import * as k8s from '@cdktf/provider-kubernetes';
 import { TerraformOutput, Token } from 'cdktf';
 import { Construct } from 'constructs';
@@ -20,10 +20,6 @@ export interface ClusterProps {
    * list of private subnetIds for an existing VPC.
    */
   readonly privateSubnets?: string[];
-  /**
-   * list of available zones in the region for a new VPC.
-   */
-  readonly availabilityZones?: string[];
   /**
    * The Amazon EKS cluster name.
    */
@@ -145,7 +141,7 @@ export class Cluster extends Construct {
       region: props.region ?? 'us-east-1',
     });
 
-    if (props.availabilityZones) {
+    if (!props.privateSubnets) {
       const vpc = this._createVpc();
       this.privateSubnets = Token.asList(vpc.privateSubnetsOutput);
       this.publicSubnets = Token.asList(vpc.publicSubnetsOutput);
@@ -202,7 +198,9 @@ export class Cluster extends Construct {
   private _createVpc() {
     const vpc = new awsVpc.TerraformAwsModulesVpcAws(this, 'Vpc', {
       cidr: '10.0.0.0/16',
-      azs: this.props.availabilityZones,
+      azs: new AZ(this, 'AZs', {
+        state: 'available',
+      }).names,
       publicSubnets: ['10.0.1.0/24', '10.0.2.0/24', '10.0.3.0/24'],
       privateSubnets: ['10.0.11.0/24', '10.0.12.0/24', '10.0.13.0/24'],
       singleNatGateway: true,

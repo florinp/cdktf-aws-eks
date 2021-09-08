@@ -18,14 +18,8 @@ const app = new App();
 
 const stack = new TerraformStack(app, 'cdktf-eks-demo');
 
-const env = {
-  region: 'ap-northeast-1',
-  availabilityZones: ['ap-northeast-1a', 'ap-northeast-1c', 'ap-northeast-1d'],
-}
-
 new Cluster(stack, 'demo-cluster', {
-  region: env.region,
-  availabilityZones: env.availabilityZones,
+  region: 'ap-northeast-1',
   version: KubernetesVersion.V1_21,
   minCapacity: 1,
 });
@@ -35,12 +29,11 @@ app.synth();
 
 ## VPC
 
-To create the cluster in a new VPC, specify `availabilityZones` of the region.
+To create the cluster in a new VPC:
 
 ```ts
 new Cluster(stack, 'demo-cluster', {
-  region: env.region,
-  availabilityZones: env.availabilityZones,
+  region: 'ap-northeast-1',
   version: KubernetesVersion.V1_21,
 });
 ```
@@ -50,7 +43,7 @@ To deploy in any existing VPC, specify the `privateSubnets` and `publicSubnets`(
 
 ```ts
 new Cluster(stack, 'demo-cluster', {
-  region: env.region,
+  region: 'ap-northeast-1',
   privateSubnets: ['subnet-111','subnet-222','subnet-333' ],
   publicSubnets: ['subnet-444','subnet-555','subnet-666' ],
   version: KubernetesVersion.V1_21,
