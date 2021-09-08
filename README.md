@@ -12,7 +12,7 @@ The following sample creates a new Amazon EKS cluster and a managed nodegroup in
 
 ```ts
 import { App, TerraformStack } from 'cdktf';
-import { AmazonEKS } from '@pahud/cdktf-aws-eks';
+import { Cluster } from '@pahud/cdktf-aws-eks';
 
 const app = new App();
 
