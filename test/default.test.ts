@@ -1,5 +1,5 @@
 import { App, TerraformStack } from 'cdktf';
-import { AmazonEKS } from '../src';
+import { Cluster } from '../src';
 
 
 test('default', () => {
@@ -7,7 +7,7 @@ test('default', () => {
 
   const stack = new TerraformStack(app, 'cdktf-eks-demo');
 
-  new AmazonEKS(stack, 'AmazonEKS');
+  new Cluster(stack, 'Cluster');
 
   expect(stack.toTerraform());
 });
