@@ -115,7 +115,7 @@ The Amazon EKS cluster name.
 ##### `desiredCapacity`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ClusterProps.property.desiredCapacity"></a>
 
 - *Type:* `number`
-- *Default:* 1
+- *Default:* minCapacity
 
 The desired capacity for the nodegroup.
 
@@ -133,7 +133,7 @@ instance types of the default nodegroup.
 ##### `maxCapacity`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ClusterProps.property.maxCapacity"></a>
 
 - *Type:* `number`
-- *Default:* minCapacity + 1
+- *Default:* desiredCapacity
 
 max capacity for the nodegroup.
 
@@ -142,7 +142,7 @@ max capacity for the nodegroup.
 ##### `minCapacity`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ClusterProps.property.minCapacity"></a>
 
 - *Type:* `number`
-- *Default:* desiredCapacity
+- *Default:* 0
 
 min capacity for the nodegroup.
 
