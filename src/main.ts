@@ -30,17 +30,17 @@ export interface ClusterProps {
   readonly version: KubernetesVersion;
   /**
    * The desired capacity for the nodegroup.
-   * @default 1
+   * @default - minCapacity
    */
   readonly desiredCapacity?: number;
   /**
    * min capacity for the nodegroup
-   * @default desiredCapacity
+   * @default 0
    */
   readonly minCapacity?: number;
   /**
    * max capacity for the nodegroup
-   * @default minCapacity + 1
+   * @default - desiredCapacity
    */
   readonly maxCapacity?: number;
   /**
@@ -135,10 +135,9 @@ export class Cluster extends Construct {
     super(scope, id);
 
     this.props = props;
-    this.desiredCapacity = props.desiredCapacity ?? 1;
-    this.minCapacity = props.minCapacity ?? this.desiredCapacity;
-    this.maxCapacity = props.maxCapacity ?? this.minCapacity+1;
-
+    this.minCapacity = props.minCapacity ?? 0;
+    this.desiredCapacity = props.desiredCapacity ?? this.minCapacity;
+    this.maxCapacity = props.maxCapacity ?? this.desiredCapacity;
     new AwsProvider(this, 'aws', {
       region: props.region ?? 'us-east-1',
     });
