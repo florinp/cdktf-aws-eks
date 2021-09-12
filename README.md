@@ -18,6 +18,8 @@ The following sample creates:
 
 
 ```ts
+import { Cluster } from '@pahud/cdktf-aws-eks';
+
 // create the cluster and the default nodegroup
 const cluster = new Cluster(stack, 'demo-cluster', {
   version: KubernetesVersion.V1_21,
