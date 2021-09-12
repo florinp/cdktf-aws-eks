@@ -64,7 +64,7 @@
           "spawn": "test:compile"
         },
         {
-          "exec": "jest --passWithNoTests --all --updateSnapshot"
+          "exec": "jest --passWithNoTests --all --updateSnapshot --coverageProvider=v8"
         },
         {
           "spawn": "eslint"
@@ -227,6 +227,19 @@
       "steps": [
         {
           "exec": "npx -p jsii-release@latest jsii-release-npm"
+        }
+      ]
+    },
+    "publish:pypi": {
+      "name": "publish:pypi",
+      "description": "Publish this package to PyPI",
+      "requiredEnv": [
+        "TWINE_USERNAME",
+        "TWINE_PASSWORD"
+      ],
+      "steps": [
+        {
+          "exec": "npx -p jsii-release@latest jsii-release-pypi"
         }
       ]
     },

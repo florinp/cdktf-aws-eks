@@ -1,4 +1,5 @@
 [![npm version](https://badge.fury.io/js/@pahud%2Fcdktf-aws-eks.svg)](https://badge.fury.io/js/@pahud%2Fcdktf-aws-eks)
+[![PyPI version](https://badge.fury.io/py/pahud-cdktf-aws-eks.svg)](https://badge.fury.io/py/pahud-cdktf-aws-eks)
 [![release](https://github.com/pahud/cdktf-aws-eks/actions/workflows/release.yml/badge.svg)](https://github.com/pahud/cdktf-aws-eks/actions/workflows/release.yml)
 [![construct hub](https://img.shields.io/badge/Construct%20Hub-available-blue)](https://constructs.dev/packages/@pahud/cdktf-aws-eks)
 

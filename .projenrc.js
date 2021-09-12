@@ -18,7 +18,7 @@ const project = new ConstructLibraryCdktf({
     '@cdktf/provider-aws',
     '@cdktf/provider-kubernetes',
   ],
-  minNodeVersion: '12.20.0',
+  minNodeVersion: '14.17.0',
   depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
     ignoreProjen: false,
     workflowOptions: {
@@ -31,6 +31,10 @@ const project = new ConstructLibraryCdktf({
     allowedUsernames: ['pahud'],
   },
   npmAccess: NpmAccess.PUBLIC,
+  publishToPypi: {
+    distName: 'pahud-cdktf-aws-eks',
+    module: 'pahud_cdktf_aws_eks',
+  },
 });
 
 const common_exclude = ['cdktf.out', 'yarn-error.log', 'dependabot.yml', '.terraform', 'terraform.*'];
