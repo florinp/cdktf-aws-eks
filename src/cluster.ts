@@ -1,7 +1,8 @@
-import { AwsProvider, EksNodeGroup, EksCluster, DataAwsEksClusterAuth, IamRole, IamPolicyAttachment, DataAwsAvailabilityZones as AZ, DataAwsSubnetIds } from '@cdktf/provider-aws';
+import { AwsProvider, EksCluster, DataAwsEksClusterAuth, IamRole, IamPolicyAttachment, DataAwsAvailabilityZones as AZ, DataAwsSubnetIds } from '@cdktf/provider-aws';
 import * as k8s from '@cdktf/provider-kubernetes';
 import { TerraformOutput, Token, ITerraformDependable } from 'cdktf';
 import { Construct } from 'constructs';
+import { NodeGroup, NodeGroupOptions, CapacityType, ScalingConfig } from '.';
 import * as awsVpc from './imports/modules/terraform-aws-modules/vpc/aws';
 
 /**
@@ -29,20 +30,9 @@ export interface ClusterProps {
    */
   readonly version: KubernetesVersion;
   /**
-   * The desired capacity for the nodegroup.
-   * @default - minCapacity
+   * The scaling config of the default nodegroup.
    */
-  readonly desiredCapacity?: number;
-  /**
-   * min capacity for the nodegroup
-   * @default 0
-   */
-  readonly minCapacity?: number;
-  /**
-   * max capacity for the nodegroup
-   * @default - desiredCapacity
-   */
-  readonly maxCapacity?: number;
+  readonly scalingConfig?: ScalingConfig;
   /**
    * capacity type of the nodegroup
    * @default CapacityType.ON_DEMAND
@@ -54,11 +44,6 @@ export interface ClusterProps {
    * @default ['t3.large']
    */
   readonly instanceTypes?: string[];
-}
-
-export enum CapacityType {
-  SPOT = 'SPOT',
-  ON_DEMAND = 'ON_DEMAND'
 }
 
 /**
@@ -126,21 +111,17 @@ export class Cluster extends Construct {
   readonly publicSubnets: string[];
   readonly privateSubnets: string[];
   readonly clusterName: string;
+  readonly cluster: EksCluster;
   readonly vpc?: any;
   readonly vpcId?: string;
-  private readonly desiredCapacity: number;
-  private readonly minCapacity: number;
-  private readonly maxCapacity: number;
+  readonly defaultNodeGroup?: NodeGroup;
+  private readonly region: string;
   constructor(scope: Construct, id: string, props: ClusterProps) {
     super(scope, id);
 
-    this.props = props;
-    this.minCapacity = props.minCapacity ?? 0;
-    this.desiredCapacity = props.desiredCapacity ?? this.minCapacity;
-    this.maxCapacity = props.maxCapacity ?? this.desiredCapacity;
-    new AwsProvider(this, 'aws', {
-      region: props.region ?? 'us-east-1',
-    });
+    this.props = props;;
+    this.region = props.region ?? 'us-east-1';
+    new AwsProvider(this, 'aws', { region: this.region });
 
     // no private subnets given
     if (!props.privateSubnets) {
@@ -168,25 +149,19 @@ export class Cluster extends Construct {
       ],
       roleArn: this._createClusterRole().arn,
     });
-
+    this.cluster = cluster;
     // cluster should be created after vpc
     if (this.vpc) {
       cluster.constructNode.addDependency(this.vpc);
     }
 
-    new EksNodeGroup(this, 'NG', {
-      clusterName: cluster.name, // ensure the dependency
-      nodeRoleArn: this._createNodeGroupRole().arn,
-      subnetIds: this.privateSubnets,
-      scalingConfig: [
-        {
-          desiredSize: this.desiredCapacity,
-          minSize: this.minCapacity,
-          maxSize: this.maxCapacity,
-        },
-      ],
-      capacityType: props.capacityType ?? CapacityType.ON_DEMAND,
-      instanceTypes: props.instanceTypes ?? ['t3.large'],
+    this.defaultNodeGroup = new NodeGroup(this, 'NG', {
+      clusterName: cluster.name,
+      subnets: this.privateSubnets,
+      scalingConfig: props.scalingConfig,
+      capacityType: props.capacityType,
+      instanceTypes: props.instanceTypes,
+      dependsOn: [this.cluster],
     });
 
     const clusterAuthData = new DataAwsEksClusterAuth(this, 'DataAwsEksClusterAuth', {
@@ -202,7 +177,7 @@ export class Cluster extends Construct {
     k8sprovider.addOverride('cluster_ca_certificate', cert);
 
     new TerraformOutput(this, 'KubelctlCommand', {
-      value: `aws eks update-kubeconfig --name ${this.clusterName}`,
+      value: `aws --region ${this.region} eks update-kubeconfig --name ${this.clusterName}`,
     });
 
   }
@@ -220,39 +195,7 @@ export class Cluster extends Construct {
     });
     return vpc;
   }
-  private _createNodeGroupRole(): IamRole {
-    const role = new IamRole(this, 'MNGRole', {
-      assumeRolePolicy: JSON.stringify({
-        Version: '2012-10-17',
-        Statement: [
-          {
-            Action: 'sts:AssumeRole',
-            Effect: 'Allow',
-            Sid: '',
-            Principal: {
-              Service: 'ec2.amazonaws.com',
-            },
-          },
-        ],
-      }),
-    });
-    new IamPolicyAttachment(this, 'AmazonEKSWorkerNodePolicyAttachment', {
-      name: 'AmazonEKSWorkerNodePolicyAttachment',
-      policyArn: 'arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy',
-      roles: [role.name],
-    });
-    new IamPolicyAttachment(this, 'AmazonEKS_CNI_PolicyAttachment', {
-      name: 'AmazonEKS_CNI_PolicyAttachment',
-      policyArn: 'arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy',
-      roles: [role.name],
-    });
-    new IamPolicyAttachment(this, 'AmazonEC2ContainerRegistryReadOnlyAttachment', {
-      name: 'AmazonEC2ContainerRegistryReadOnlyAttachment',
-      policyArn: 'arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly',
-      roles: [role.name],
-    });
-    return role;
-  }
+
   private _createClusterRole(): IamRole {
     const role = new IamRole(this, 'ClusterRole', {
       assumeRolePolicy: JSON.stringify({
@@ -285,6 +228,15 @@ export class Cluster extends Construct {
     return new DataAwsSubnetIds(this, `${vpcId}subnets`, {
       vpcId,
       dependsOn: dependable,
+    });
+  }
+  public addNodeGroup(id: string, options: NodeGroupOptions) {
+    new NodeGroup(this, id, {
+      ...options,
+      clusterName: this.clusterName,
+      nodeRole: options.nodeRole ?? this.defaultNodeGroup?.nodeGroupRoleArn,
+      subnets: options.subnets ?? this.privateSubnets,
+      dependsOn: [this.cluster],
     });
   }
 }

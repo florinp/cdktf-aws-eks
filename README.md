@@ -8,42 +8,39 @@ CDKTF construct library for Amazon EKS.
 
 ## Usage
 
-The following sample creates a new Amazon EKS cluster and a managed nodegroup in a new VPC in `ap-northeast-1`.
+The following sample creates:
+
+1. A new VPC
+1. Amazon EKS cluster(control plane)
+2. The default nodegroup with the cluster
+3. The 2nd nodegroup with spot instances
+
 
 ```ts
-import { App, TerraformStack } from 'cdktf';
-import { Cluster } from '@pahud/cdktf-aws-eks';
-
-const app = new App();
-
-const stack = new TerraformStack(app, 'cdktf-eks-demo');
-
-new Cluster(stack, 'demo-cluster', {
-  region: 'ap-northeast-1',
+// create the cluster and the default nodegroup
+const cluster = new Cluster(stack, 'demo-cluster', {
   version: KubernetesVersion.V1_21,
-  minCapacity: 1,
+  scalingConfig: { minCapacity: 1 },
 });
 
-app.synth();
+// create the optional 2nd nodegroup
+cluster.addNodeGroup('NG2', {
+  scalingConfig: {
+    minCapacity: 1,
+    maxCapacity: 10,
+    desiredCapacity: 5,
+  },
+  capacityType: CapacityType.SPOT,
+  instanceTypes: ['t3.large', 'c5.large', 'm5.large']
+})
 ```
 
-## VPC
-
-To create the cluster in a new VPC:
-
-```ts
-new Cluster(stack, 'demo-cluster', {
-  region: 'ap-northeast-1',
-  version: KubernetesVersion.V1_21,
-});
-```
+## Existing VPC subnets
 
 To deploy in any existing VPC, specify the `privateSubnets` and `publicSubnets`(if any).
 
-
 ```ts
 new Cluster(stack, 'demo-cluster', {
-  region: 'ap-northeast-1',
   privateSubnets: ['subnet-111','subnet-222','subnet-333' ],
   publicSubnets: ['subnet-444','subnet-555','subnet-666' ],
   version: KubernetesVersion.V1_21,

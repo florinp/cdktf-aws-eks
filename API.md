@@ -32,9 +32,34 @@ new Cluster(scope: Construct, id: string, props: ClusterProps)
 
 ---
 
+#### Methods <a name="Methods"></a>
+
+##### `addNodeGroup` <a name="@pahud/cdktf-aws-eks.Cluster.addNodeGroup"></a>
+
+```typescript
+public addNodeGroup(id: string, options: NodeGroupOptions)
+```
+
+###### `id`<sup>Required</sup> <a name="@pahud/cdktf-aws-eks.Cluster.parameter.id"></a>
+
+- *Type:* `string`
+
+---
+
+###### `options`<sup>Required</sup> <a name="@pahud/cdktf-aws-eks.Cluster.parameter.options"></a>
+
+- *Type:* [`@pahud/cdktf-aws-eks.NodeGroupOptions`](#@pahud/cdktf-aws-eks.NodeGroupOptions)
+
+---
 
 
 #### Properties <a name="Properties"></a>
+
+##### `cluster`<sup>Required</sup> <a name="@pahud/cdktf-aws-eks.Cluster.property.cluster"></a>
+
+- *Type:* [`@cdktf/provider-aws.EksCluster`](#@cdktf/provider-aws.EksCluster)
+
+---
 
 ##### `clusterName`<sup>Required</sup> <a name="@pahud/cdktf-aws-eks.Cluster.property.clusterName"></a>
 
@@ -60,6 +85,12 @@ new Cluster(scope: Construct, id: string, props: ClusterProps)
 
 ---
 
+##### `defaultNodeGroup`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.Cluster.property.defaultNodeGroup"></a>
+
+- *Type:* [`@pahud/cdktf-aws-eks.NodeGroup`](#@pahud/cdktf-aws-eks.NodeGroup)
+
+---
+
 ##### `vpc`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.Cluster.property.vpc"></a>
 
 - *Type:* `any`
@@ -67,6 +98,45 @@ new Cluster(scope: Construct, id: string, props: ClusterProps)
 ---
 
 ##### `vpcId`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.Cluster.property.vpcId"></a>
+
+- *Type:* `string`
+
+---
+
+
+### NodeGroup <a name="@pahud/cdktf-aws-eks.NodeGroup"></a>
+
+#### Initializers <a name="@pahud/cdktf-aws-eks.NodeGroup.Initializer"></a>
+
+```typescript
+import { NodeGroup } from '@pahud/cdktf-aws-eks'
+
+new NodeGroup(scope: Construct, id: string, props: NodeGroupProps)
+```
+
+##### `scope`<sup>Required</sup> <a name="@pahud/cdktf-aws-eks.NodeGroup.parameter.scope"></a>
+
+- *Type:* [`constructs.Construct`](#constructs.Construct)
+
+---
+
+##### `id`<sup>Required</sup> <a name="@pahud/cdktf-aws-eks.NodeGroup.parameter.id"></a>
+
+- *Type:* `string`
+
+---
+
+##### `props`<sup>Required</sup> <a name="@pahud/cdktf-aws-eks.NodeGroup.parameter.props"></a>
+
+- *Type:* [`@pahud/cdktf-aws-eks.NodeGroupProps`](#@pahud/cdktf-aws-eks.NodeGroupProps)
+
+---
+
+
+
+#### Properties <a name="Properties"></a>
+
+##### `nodeGroupRoleArn`<sup>Required</sup> <a name="@pahud/cdktf-aws-eks.NodeGroup.property.nodeGroupRoleArn"></a>
 
 - *Type:* `string`
 
@@ -112,39 +182,12 @@ The Amazon EKS cluster name.
 
 ---
 
-##### `desiredCapacity`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ClusterProps.property.desiredCapacity"></a>
-
-- *Type:* `number`
-- *Default:* minCapacity
-
-The desired capacity for the nodegroup.
-
----
-
 ##### `instanceTypes`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ClusterProps.property.instanceTypes"></a>
 
 - *Type:* `string`[]
 - *Default:* ['t3.large']
 
 instance types of the default nodegroup.
-
----
-
-##### `maxCapacity`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ClusterProps.property.maxCapacity"></a>
-
-- *Type:* `number`
-- *Default:* desiredCapacity
-
-max capacity for the nodegroup.
-
----
-
-##### `minCapacity`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ClusterProps.property.minCapacity"></a>
-
-- *Type:* `number`
-- *Default:* 0
-
-min capacity for the nodegroup.
 
 ---
 
@@ -169,6 +212,231 @@ list of public subnetIds for an existing VPC.
 - *Type:* `string`
 
 The AWS region to deploy.
+
+---
+
+##### `scalingConfig`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ClusterProps.property.scalingConfig"></a>
+
+- *Type:* [`@pahud/cdktf-aws-eks.ScalingConfig`](#@pahud/cdktf-aws-eks.ScalingConfig)
+
+The scaling config of the default nodegroup.
+
+---
+
+### NodeGroupBaseOptions <a name="@pahud/cdktf-aws-eks.NodeGroupBaseOptions"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { NodeGroupBaseOptions } from '@pahud/cdktf-aws-eks'
+
+const nodeGroupBaseOptions: NodeGroupBaseOptions = { ... }
+```
+
+##### `capacityType`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupBaseOptions.property.capacityType"></a>
+
+- *Type:* [`@pahud/cdktf-aws-eks.CapacityType`](#@pahud/cdktf-aws-eks.CapacityType)
+- *Default:* CapacityType.ON_DEMAND
+
+capacity type of the nodegroup.
+
+---
+
+##### `dependsOn`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupBaseOptions.property.dependsOn"></a>
+
+- *Type:* [`cdktf.ITerraformDependable`](#cdktf.ITerraformDependable)[]
+
+resources to depend on;
+
+---
+
+##### `instanceTypes`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupBaseOptions.property.instanceTypes"></a>
+
+- *Type:* `string`[]
+- *Default:* ['t3.large']
+
+instance types of the nodegroup.
+
+---
+
+##### `nodeRole`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupBaseOptions.property.nodeRole"></a>
+
+- *Type:* `string`
+- *Default:* The IAM role for the default nodegroup.
+
+nodegroup role arn.
+
+---
+
+##### `scalingConfig`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupBaseOptions.property.scalingConfig"></a>
+
+- *Type:* [`@pahud/cdktf-aws-eks.ScalingConfig`](#@pahud/cdktf-aws-eks.ScalingConfig)
+
+scaling configuration for the nodegroup.
+
+> https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_node_group#scaling_config-configuration-block
+
+---
+
+### NodeGroupOptions <a name="@pahud/cdktf-aws-eks.NodeGroupOptions"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { NodeGroupOptions } from '@pahud/cdktf-aws-eks'
+
+const nodeGroupOptions: NodeGroupOptions = { ... }
+```
+
+##### `capacityType`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupOptions.property.capacityType"></a>
+
+- *Type:* [`@pahud/cdktf-aws-eks.CapacityType`](#@pahud/cdktf-aws-eks.CapacityType)
+- *Default:* CapacityType.ON_DEMAND
+
+capacity type of the nodegroup.
+
+---
+
+##### `dependsOn`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupOptions.property.dependsOn"></a>
+
+- *Type:* [`cdktf.ITerraformDependable`](#cdktf.ITerraformDependable)[]
+
+resources to depend on;
+
+---
+
+##### `instanceTypes`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupOptions.property.instanceTypes"></a>
+
+- *Type:* `string`[]
+- *Default:* ['t3.large']
+
+instance types of the nodegroup.
+
+---
+
+##### `nodeRole`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupOptions.property.nodeRole"></a>
+
+- *Type:* `string`
+- *Default:* The IAM role for the default nodegroup.
+
+nodegroup role arn.
+
+---
+
+##### `scalingConfig`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupOptions.property.scalingConfig"></a>
+
+- *Type:* [`@pahud/cdktf-aws-eks.ScalingConfig`](#@pahud/cdktf-aws-eks.ScalingConfig)
+
+scaling configuration for the nodegroup.
+
+> https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_node_group#scaling_config-configuration-block
+
+---
+
+##### `subnets`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupOptions.property.subnets"></a>
+
+- *Type:* `string`[]
+
+subnet IDs for the nodegroup.
+
+---
+
+### NodeGroupProps <a name="@pahud/cdktf-aws-eks.NodeGroupProps"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { NodeGroupProps } from '@pahud/cdktf-aws-eks'
+
+const nodeGroupProps: NodeGroupProps = { ... }
+```
+
+##### `capacityType`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupProps.property.capacityType"></a>
+
+- *Type:* [`@pahud/cdktf-aws-eks.CapacityType`](#@pahud/cdktf-aws-eks.CapacityType)
+- *Default:* CapacityType.ON_DEMAND
+
+capacity type of the nodegroup.
+
+---
+
+##### `dependsOn`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupProps.property.dependsOn"></a>
+
+- *Type:* [`cdktf.ITerraformDependable`](#cdktf.ITerraformDependable)[]
+
+resources to depend on;
+
+---
+
+##### `instanceTypes`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupProps.property.instanceTypes"></a>
+
+- *Type:* `string`[]
+- *Default:* ['t3.large']
+
+instance types of the nodegroup.
+
+---
+
+##### `nodeRole`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupProps.property.nodeRole"></a>
+
+- *Type:* `string`
+- *Default:* The IAM role for the default nodegroup.
+
+nodegroup role arn.
+
+---
+
+##### `scalingConfig`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupProps.property.scalingConfig"></a>
+
+- *Type:* [`@pahud/cdktf-aws-eks.ScalingConfig`](#@pahud/cdktf-aws-eks.ScalingConfig)
+
+scaling configuration for the nodegroup.
+
+> https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_node_group#scaling_config-configuration-block
+
+---
+
+##### `clusterName`<sup>Required</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupProps.property.clusterName"></a>
+
+- *Type:* `string`
+
+cluster name.
+
+---
+
+##### `subnets`<sup>Required</sup> <a name="@pahud/cdktf-aws-eks.NodeGroupProps.property.subnets"></a>
+
+- *Type:* `string`[]
+
+subnet IDs for the nodegroup.
+
+---
+
+### ScalingConfig <a name="@pahud/cdktf-aws-eks.ScalingConfig"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { ScalingConfig } from '@pahud/cdktf-aws-eks'
+
+const scalingConfig: ScalingConfig = { ... }
+```
+
+##### `desiredCapacity`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ScalingConfig.property.desiredCapacity"></a>
+
+- *Type:* `number`
+
+---
+
+##### `maxCapacity`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ScalingConfig.property.maxCapacity"></a>
+
+- *Type:* `number`
+
+---
+
+##### `minCapacity`<sup>Optional</sup> <a name="@pahud/cdktf-aws-eks.ScalingConfig.property.minCapacity"></a>
+
+- *Type:* `number`
 
 ---
 

@@ -5,13 +5,21 @@ const app = new App();
 
 const stack = new TerraformStack(app, 'cdktf-eks-demo');
 
-new Cluster(stack, 'demo-cluster', {
-  region: 'ap-northeast-1',
+// create the cluster and the default nodegroup
+const cluster = new Cluster(stack, 'demo-cluster', {
   version: KubernetesVersion.V1_21,
-  // privateSubnets: ['subnet-049c36e0d1462b501', 'subnet-00516170171b3d102', 'subnet-0bf0e41cd28c1dfa0'],
-  clusterName: 'cdktf-eks-demo',
-  minCapacity: 1,
+  scalingConfig: { minCapacity: 1 },
+});
+
+// create the optional 2nd nodegroup
+cluster.addNodeGroup('NG2', {
+  scalingConfig: {
+    minCapacity: 1,
+    maxCapacity: 10,
+    desiredCapacity: 5,
+  },
   capacityType: CapacityType.SPOT,
+  instanceTypes: ['t3.large', 'c5.large', 'm5.large'],
 });
 
 app.synth();
