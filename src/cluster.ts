@@ -152,7 +152,7 @@ export class Cluster extends Construct {
     this.cluster = cluster;
     // cluster should be created after vpc
     if (this.vpc) {
-      cluster.constructNode.addDependency(this.vpc);
+      cluster.node.addDependency(this.vpc);
     }
 
     this.defaultNodeGroup = new NodeGroup(this, 'NG', {

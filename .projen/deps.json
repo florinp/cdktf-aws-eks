@@ -27,7 +27,7 @@
     },
     {
       "name": "cdktf",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "type": "build"
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "name": "cdktf",
-      "version": "^0.5.0",
+      "version": "^0.6.0",
       "type": "peer"
     },
     {
@@ -126,6 +126,11 @@
     },
     {
       "name": "@cdktf/provider-kubernetes",
+      "type": "runtime"
+    },
+    {
+      "name": "constructs",
+      "version": "^10",
       "type": "runtime"
     }
   ],
