@@ -18,7 +18,6 @@ const project = new ConstructLibraryCdktf({
   peerDeps: [
     '@cdktf/provider-aws',
     '@cdktf/provider-kubernetes',
-    'constructs',
   ],
   depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
     ignoreProjen: false,
@@ -37,6 +36,12 @@ const project = new ConstructLibraryCdktf({
     module: 'pahud_cdktf_aws_eks',
   },
 });
+
+
+const packageJson = project.tryFindObjectFile('package.json');
+packageJson.addOverride('peerDependencies.constructs', '^10');
+packageJson.addOverride('devDependencies.constructs', '^10');
+
 
 const common_exclude = ['cdktf.out', 'yarn-error.log', 'dependabot.yml', '.terraform', 'terraform.*'];
 project.npmignore.exclude(...common_exclude, 'images', 'docs', 'website');
