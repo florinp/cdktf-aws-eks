@@ -1,16 +1,20 @@
-import { App, TerraformStack } from 'cdktf';
+import { TerraformStack, Testing } from 'cdktf';
 import { Cluster, KubernetesVersion } from '../src';
 
+Testing.setupJest();
+let app = Testing.app();
+let stack = new TerraformStack(app, 'test');
 
-test('default', () => {
-  const app = new App();
-
-  const stack = new TerraformStack(app, 'cdktf-eks-demo');
-
-  new Cluster(stack, 'Cluster', {
-    region: 'ap-northeast-1',
-    version: KubernetesVersion.V1_21,
+describe('Unit testing using snapshots', () => {
+  it('should match the snapshot', () => {
+    expect(
+      Testing.synthScope(() => {
+        new Cluster(stack, 'Cluster', {
+          version: KubernetesVersion.V1_21,
+        });
+      })).
+      toMatchSnapshot();
   });
-
-  expect(stack.toTerraform());
 });
+
+

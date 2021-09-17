@@ -5,7 +5,7 @@ const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 const project = new ConstructLibraryCdktf({
   author: 'Pahud Hsieh',
   authorAddress: 'pahudnet@gmail.com',
-  cdktfVersion: '0.5.0',
+  cdktfVersion: '0.6.0',
   defaultReleaseBranch: 'main',
   name: '@pahud/cdktf-aws-eks',
   description: 'CDKTF construct library for Amazon EKS',
@@ -18,7 +18,6 @@ const project = new ConstructLibraryCdktf({
     '@cdktf/provider-aws',
     '@cdktf/provider-kubernetes',
   ],
-  minNodeVersion: '14.17.0',
   depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
     ignoreProjen: false,
     workflowOptions: {
