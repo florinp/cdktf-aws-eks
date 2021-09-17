@@ -13,7 +13,6 @@ const project = new ConstructLibraryCdktf({
   deps: [
     '@cdktf/provider-aws',
     '@cdktf/provider-kubernetes',
-    'constructs@^10',
   ],
   peerDeps: [
     '@cdktf/provider-aws',
@@ -36,12 +35,6 @@ const project = new ConstructLibraryCdktf({
     module: 'pahud_cdktf_aws_eks',
   },
 });
-
-
-const packageJson = project.tryFindObjectFile('package.json');
-packageJson.addOverride('peerDependencies.constructs', '^10');
-packageJson.addOverride('devDependencies.constructs', '^10');
-
 
 const common_exclude = ['cdktf.out', 'yarn-error.log', 'dependabot.yml', '.terraform', 'terraform.*'];
 project.npmignore.exclude(...common_exclude, 'images', 'docs', 'website');
