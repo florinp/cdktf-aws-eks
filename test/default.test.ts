@@ -6,7 +6,7 @@ let app = Testing.app();
 let stack = new TerraformStack(app, 'test');
 
 describe('Unit testing using snapshots', () => {
-  it('default', () => {
+  it('should match the snapshot', () => {
     expect(
       Testing.synthScope(() => {
         new Cluster(stack, 'Cluster', {
