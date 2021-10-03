@@ -1,6 +1,5 @@
 const {
   ConstructLibraryCdktf,
-  DependenciesUpgradeMechanism,
   NpmAccess,
   DevEnvironmentDockerImage,
   Gitpod,
@@ -24,13 +23,13 @@ const project = new ConstructLibraryCdktf({
     '@cdktf/provider-aws',
     '@cdktf/provider-kubernetes',
   ],
-  depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
+  depsUpgradeOptions: {
     ignoreProjen: false,
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],
       secret: AUTOMATION_TOKEN,
     },
-  }),
+  },
   autoApproveOptions: {
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['pahud'],
