@@ -35,7 +35,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@cdktf/provider-aws": "^2.0.11",
+    "@cdktf/provider-aws": "^2.0.12",
     "@cdktf/provider-kubernetes": "^0.3.12",
     "@types/jest": "^27.0.2",
     "@types/node": "^14.17.0",
@@ -51,7 +51,7 @@
     "jest-junit": "^12",
     "jsii": "^1.39.0",
     "jsii-diff": "^1.39.0",
-    "jsii-docgen": "^3.7.9",
+    "jsii-docgen": "^3.7.10",
     "jsii-pacmak": "^1.39.0",
     "json-schema": "^0.3.0",
     "npm-check-updates": "^11",
@@ -61,13 +61,13 @@
     "typescript": "^3.9.10"
   },
   "peerDependencies": {
-    "@cdktf/provider-aws": "^2.0.11",
+    "@cdktf/provider-aws": "^2.0.12",
     "@cdktf/provider-kubernetes": "^0.3.12",
     "cdktf": "^0.6.3",
     "constructs": "^10"
   },
   "dependencies": {
-    "@cdktf/provider-aws": "^2.0.11",
+    "@cdktf/provider-aws": "^2.0.12",
     "@cdktf/provider-kubernetes": "^0.3.12"
   },
   "bundledDependencies": [],
