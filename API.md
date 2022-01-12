@@ -61,7 +61,7 @@ public addNodeGroup(id: string, options: NodeGroupOptions)
 public readonly cluster: EksCluster;
 ```
 
-- *Type:* [`@cdktf/provider-aws.EksCluster`](#@cdktf/provider-aws.EksCluster)
+- *Type:* [`@cdktf/provider-aws.eks.EksCluster`](#@cdktf/provider-aws.eks.EksCluster)
 
 ---
 

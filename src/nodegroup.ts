@@ -1,5 +1,5 @@
 
-import { EksNodeGroup, IamRole, IamPolicyAttachment } from '@cdktf/provider-aws';
+import { eks, iam } from '@cdktf/provider-aws';
 import { ITerraformDependable } from 'cdktf';
 import { Construct } from 'constructs';
 
@@ -74,24 +74,22 @@ export class NodeGroup extends Construct {
 
     this.nodeGroupRoleArn = props.nodeRole ?? this._createNodeGroupRole().arn;
 
-    new EksNodeGroup(this, 'NodeGroup', {
+    new eks.EksNodeGroup(this, 'NodeGroup', {
       clusterName: props.clusterName,
       nodeRoleArn: this.nodeGroupRoleArn,
       subnetIds: props.subnets,
-      scalingConfig: [
-        {
-          desiredSize: this.desiredCapacity,
-          minSize: this.minCapacity,
-          maxSize: this.maxCapacity,
-        },
-      ],
+      scalingConfig: {
+        desiredSize: this.desiredCapacity,
+        minSize: this.minCapacity,
+        maxSize: this.maxCapacity,
+      },
       capacityType: props.capacityType ?? CapacityType.ON_DEMAND,
       instanceTypes: props.instanceTypes ?? ['t3.large'],
       dependsOn: props.dependsOn,
     });
   }
-  private _createNodeGroupRole(): IamRole {
-    const role = new IamRole(this, 'MNGRole', {
+  private _createNodeGroupRole(): iam.IamRole {
+    const role = new iam.IamRole(this, 'MNGRole', {
       assumeRolePolicy: JSON.stringify({
         Version: '2012-10-17',
         Statement: [
@@ -106,17 +104,17 @@ export class NodeGroup extends Construct {
         ],
       }),
     });
-    new IamPolicyAttachment(this, 'AmazonEKSWorkerNodePolicyAttachment', {
+    new iam.IamPolicyAttachment(this, 'AmazonEKSWorkerNodePolicyAttachment', {
       name: 'AmazonEKSWorkerNodePolicyAttachment',
       policyArn: 'arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy',
       roles: [role.name],
     });
-    new IamPolicyAttachment(this, 'AmazonEKS_CNI_PolicyAttachment', {
+    new iam.IamPolicyAttachment(this, 'AmazonEKS_CNI_PolicyAttachment', {
       name: 'AmazonEKS_CNI_PolicyAttachment',
       policyArn: 'arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy',
       roles: [role.name],
     });
-    new IamPolicyAttachment(this, 'AmazonEC2ContainerRegistryReadOnlyAttachment', {
+    new iam.IamPolicyAttachment(this, 'AmazonEC2ContainerRegistryReadOnlyAttachment', {
       name: 'AmazonEC2ContainerRegistryReadOnlyAttachment',
       policyArn: 'arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly',
       roles: [role.name],

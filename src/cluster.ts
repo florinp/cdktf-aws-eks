@@ -1,4 +1,4 @@
-import { AwsProvider, EksCluster, DataAwsEksClusterAuth, IamRole, IamPolicyAttachment, DataAwsAvailabilityZones as AZ, DataAwsSubnetIds } from '@cdktf/provider-aws';
+import { AwsProvider, vpc as VPC, eks, iam, datasources } from '@cdktf/provider-aws';
 import * as k8s from '@cdktf/provider-kubernetes';
 import { TerraformOutput, Token, ITerraformDependable } from 'cdktf';
 import { Construct } from 'constructs';
@@ -111,7 +111,7 @@ export class Cluster extends Construct {
   readonly publicSubnets: string[];
   readonly privateSubnets: string[];
   readonly clusterName: string;
-  readonly cluster: EksCluster;
+  readonly cluster: eks.EksCluster;
   readonly vpc?: any;
   readonly vpcId?: string;
   readonly defaultNodeGroup?: NodeGroup;
@@ -137,16 +137,14 @@ export class Cluster extends Construct {
 
     // create the cluster
     this.clusterName = props.clusterName ?? `${id}cluster`;
-    const cluster = new EksCluster(this, 'EksCluster', {
+    const cluster = new eks.EksCluster(this, 'EksCluster', {
       name: this.clusterName,
       version: props.version.version,
-      vpcConfig: [
-        {
-          // the cluster should associate with all available subnets
-          subnetIds: this.vpcId ? this.getAllSubnetsFromVpcId(this.vpcId, [this.vpc]).ids :
-            this.privateSubnets.concat(this.publicSubnets),
-        },
-      ],
+      vpcConfig: {
+        // the cluster should associate with all available subnets
+        subnetIds: this.vpcId ? this.getAllSubnetsFromVpcId(this.vpcId, [this.vpc]).ids :
+          this.privateSubnets.concat(this.publicSubnets),
+      },
       roleArn: this._createClusterRole().arn,
     });
     this.cluster = cluster;
@@ -164,7 +162,7 @@ export class Cluster extends Construct {
       dependsOn: [this.cluster],
     });
 
-    const clusterAuthData = new DataAwsEksClusterAuth(this, 'DataAwsEksClusterAuth', {
+    const clusterAuthData = new eks.DataAwsEksClusterAuth(this, 'DataAwsEksClusterAuth', {
       name: this.clusterName,
     });
 
@@ -184,7 +182,7 @@ export class Cluster extends Construct {
   private _createVpc() {
     const vpc = new awsVpc.TerraformAwsModulesVpcAws(this, 'Vpc', {
       cidr: '10.0.0.0/16',
-      azs: new AZ(this, 'AZs', {
+      azs: new datasources.DataAwsAvailabilityZones(this, 'AZs', {
         state: 'available',
       }).names,
       publicSubnets: ['10.0.1.0/24', '10.0.2.0/24', '10.0.3.0/24'],
@@ -196,8 +194,8 @@ export class Cluster extends Construct {
     return vpc;
   }
 
-  private _createClusterRole(): IamRole {
-    const role = new IamRole(this, 'ClusterRole', {
+  private _createClusterRole(): iam.IamRole {
+    const role = new iam.IamRole(this, 'ClusterRole', {
       assumeRolePolicy: JSON.stringify({
         Version: '2012-10-17',
         Statement: [
@@ -212,12 +210,12 @@ export class Cluster extends Construct {
         ],
       }),
     });
-    new IamPolicyAttachment(this, 'AmazonEKSClusterPolicyAttachment', {
+    new iam.IamPolicyAttachment(this, 'AmazonEKSClusterPolicyAttachment', {
       name: 'AmazonEKSClusterPolicyAttachment',
       policyArn: 'arn:aws:iam::aws:policy/AmazonEKSClusterPolicy',
       roles: [role.name],
     });
-    new IamPolicyAttachment(this, 'AmazonEKSVPCResourceControllerAttachment', {
+    new iam.IamPolicyAttachment(this, 'AmazonEKSVPCResourceControllerAttachment', {
       name: 'AmazonEKSVPCResourceControllerAttachment',
       policyArn: 'arn:aws:iam::aws:policy/AmazonEKSVPCResourceController',
       roles: [role.name],
@@ -225,7 +223,7 @@ export class Cluster extends Construct {
     return role;
   }
   private getAllSubnetsFromVpcId(vpcId: string, dependable?: ITerraformDependable[]) {
-    return new DataAwsSubnetIds(this, `${vpcId}subnets`, {
+    return new VPC.DataAwsSubnetIds(this, 'subnets', {
       vpcId,
       dependsOn: dependable,
     });

@@ -309,15 +309,15 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@cdktf/provider-aws@^2.0.12":
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/@cdktf/provider-aws/-/provider-aws-2.0.12.tgz#f0355a43a0bad9c20ffe5ed2b42b426f60df3e37"
-  integrity sha512-pgKSqHlB9trn2GXArjJS4l/BUYhZgYkgbD6RTvTevHr+Fm+qc/9q1bPHVFg0SORKGP9pBFrTeHQBw/3SbQ2DHw==
+"@cdktf/provider-aws@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@cdktf/provider-aws/-/provider-aws-3.0.1.tgz#c84add478efe794d2e8e1ad890b5bcab5f14888c"
+  integrity sha512-e5YtdoNkw0KCexLYQI+TZGoQMwp//0xvTgVmM5qi4/4EMDXu0TfXbn15Eckdkdfyj+02TY4RYWTFPUvwFeBTmw==
 
-"@cdktf/provider-kubernetes@^0.3.12":
-  version "0.3.12"
-  resolved "https://registry.yarnpkg.com/@cdktf/provider-kubernetes/-/provider-kubernetes-0.3.12.tgz#c79ff2d250ecfb08c30db14274b73e8d1fdfd90b"
-  integrity sha512-5ciZzsiy3iUR5YuUfb/Ou/GxhaI0G14fyB10H4yi6qKGKSPbyH2MzpDEBCvfX8fLq3z4Xm/SExgNJn9zxgxEEQ==
+"@cdktf/provider-kubernetes@^0.4.29":
+  version "0.4.29"
+  resolved "https://registry.yarnpkg.com/@cdktf/provider-kubernetes/-/provider-kubernetes-0.4.29.tgz#5ce8188fdd6b501a5ee3f450cfaa595078746707"
+  integrity sha512-hB3b81wUsNyPcuqbyusOzh37WyjC0izUu5TMk482w+0qe6Z+LvU+hIXOjcH/eBFQnPRIMvVMr4yMp2L3M90YdA==
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
@@ -1456,10 +1456,10 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-cdktf@0.6.3:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/cdktf/-/cdktf-0.6.3.tgz#c30c85b920b67204ec5a9345d73668815aeff786"
-  integrity sha512-N0JxulsgED3uQQFjlKgl1sLzDtjX0sdDMpj9Zd8ejsH/JRhLDKOCqRWKukOFfW0X43TtU9r8SiLn3MagLmVG5w==
+cdktf@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/cdktf/-/cdktf-0.8.1.tgz#6b014f3c9ef6baae65801b9307174d05cf8ce276"
+  integrity sha512-12SZiQvl8r6/Y77dDVlIeYym8ny4Mh3M8WNwWNXV0Gy9S4xJyODKYuKYCleaiJxwtHOkkN7Hn0S3RxAZyx3eRg==
   dependencies:
     archiver "5.3.0"
 
