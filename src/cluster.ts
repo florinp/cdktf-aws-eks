@@ -44,6 +44,10 @@ export interface ClusterProps {
    * @default ['t3.large']
    */
   readonly instanceTypes?: string[];
+  /**
+   * Alias name
+   */
+  readonly alias?: string;
 }
 
 /**
@@ -121,7 +125,10 @@ export class Cluster extends Construct {
 
     this.props = props;;
     this.region = props.region ?? 'us-east-1';
-    new AwsProvider(this, 'aws', { region: this.region });
+    new AwsProvider(this, 'aws', {
+      region: this.region,
+      alias: props.alias,
+    });
 
     // no private subnets given
     if (!props.privateSubnets) {
@@ -171,6 +178,7 @@ export class Cluster extends Construct {
     const k8sprovider = new k8s.KubernetesProvider(this, 'Kubernetes', {
       host: Token.asString(cluster.endpoint),
       token: Token.asString(clusterAuthData.token),
+      alias: props.alias,
     });
     k8sprovider.addOverride('cluster_ca_certificate', cert);
 
